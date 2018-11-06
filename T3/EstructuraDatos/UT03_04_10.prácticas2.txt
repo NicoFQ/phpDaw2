@@ -1,0 +1,32 @@
+Para todos los ejercicios se debe describir la estructura de clases y
+definir sus métodos. Para no implementar la funcionalidad que representan
+en este puto escribiremos la acción que estamos realizando. Por ejemplo:
+.- Si estamos implementando el método pagar() en la plase PayPal al
+   llamar a este método de un objeto PayPal se escribirá "Pago con PayPal"
+.- Si estamos implementando el método disparar en la clase Rifle se escribirá
+   "Disparo con rifle"
+
+Junto con la definición de clases tendrá que haber una o varias páginas de test
+ donde se compruebe que la funcionalidad se corresponde con los requisitos.
+
+
+Enunciado 2
+Defina un interfaz para una estructura de datos con las operaciones de:
+.- vaciar: quita todos los elementos de la estructura
+.- estaVacía: devuelve si está vacía
+.- introduce(valor): mete un valor
+.- saca: devuelve el valor que corresponde
+
+
+
+                 IEstructuraDeDatos
+                        |
+     (abstracta) EstructuraConArray     <= vaciar y estaVacia
+                /                  \
+(abstracta) MeteConUnshift   (abstracta) MeteConPush   <= introduce
+          /      \                  /      \
+        SPila   SCola            PPila     PCola     <= saca
+
+
+También tenemos un trait para imprimir como tabla HTML y un trait para
+escribir como un json.

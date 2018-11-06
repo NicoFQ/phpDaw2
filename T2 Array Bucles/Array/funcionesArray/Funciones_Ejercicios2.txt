@@ -1,0 +1,22 @@
+[15 min]
+Crea una función recursiva que devuelva una cadena invertida.
+No puedes usar funciones de cadena
+
+[15 min]
+Crea una función que devuelva el factorial de todos los números contenidos en
+un array pasado como parámetro. En caso de que algún elemento no sea un entero
+el array devuelto contendrá el valor 0
+DEBES USAR array_map y una función auxiliar.
+
+[20 min]
+Crea una función que recibe una lista variable de parámetros, cada parámetro debe ser un array. La función devolverá un array conteniendo todos los valores.
+La función debe preservar los índices de los arrays originales.
+
+[50 min]
+Crea un juego de funciones para manejar información de un sudoku
+sudokuIni($var_sudoku); // inicia el tablero
+sudokuPrint($var_sudoku); // muestra una tabla HTML
+sudokuAnota($var_sudoku,2,3,5); // Apunta en la posición 2, 3 el valor 5
+sudokuComprueba($var_sudoku,2,3,5); // Comprueba si se puede anotar el número
+sudokuLimpia($var_sudoku,2,3); // limpia el valor de la posición 2,3
+sudokuCompleto($var_sudoku); // Devuelve si el sudoku está relleno

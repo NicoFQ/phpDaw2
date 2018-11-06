@@ -1,0 +1,3 @@
+Modifica el proyecto para que cuando alguien intente acceder al premio
+directamente sea redirigido a las página de login y que muestre un mensaje
+con "Acceso no permitido" en el sistema de errores.

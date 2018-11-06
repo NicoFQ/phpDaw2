@@ -1,0 +1,35 @@
+[20 min]
+Crea una función que reciba un array con distintos valores, la función
+devolverá un array con el número de elementos de cada tipo teniendo como
+índice el tipo de dato.
+
+Ejemplo:
+$arr = [1, 2, 3, "Hola", "k", "ase", [], NULL, ["W"], 2.3, 2.6];
+$resultado = cuentaTipos($arr);
+print_r($resultado);
+[
+  "integer" => 3,
+  "string" => 3,
+  etc...
+]
+
+[25 min]
+Crea una función que reciba un array con información de un usuario y escriba
+un formulario relleno.
+NOTA: La información de población debe aparecer en un select
+Ejemplo
+$yo = [
+  "nombre" => "Jorge Dueñas Lerín",
+  "dirección" => "Calle falsa número 1234"
+  "teléfono" => "91 123 45 67",
+  "población" => "Madrid",
+  "edad" => 23,
+]
+
+format_form_user($yo);
+
+Imprime
+<form id="datos personales" action="post">
+  <input name="nombre" value="Jorge Dueñas Lerín"></input>
+  ... etc.
+</form>

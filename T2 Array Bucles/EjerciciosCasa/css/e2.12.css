@@ -1,0 +1,10 @@
+#papa{
+	width: 1500px;
+
+	text-align: center;
+}
+.hijo{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+}

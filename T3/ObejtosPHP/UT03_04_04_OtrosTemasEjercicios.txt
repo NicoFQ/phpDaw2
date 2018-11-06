@@ -1,0 +1,99 @@
+Otros temas de la orientación a objetos de php
+
+"Sobrecarga"
+================================================================================
+http://php.net/manual/es/language.oop5.overloading.php
+
+Es un nombre mal elegido para este concepto. ¿Por qué?
+
+Ejercicio:
+Crea una clase persona con 3 propiedades: nombre, apellido1 y apellido2. Con las
+propiedades dinámicas crea un juego de propiedades implementadas detrás de las
+llamadas a __get de tal forma que puedas obtener la información en mayúsculas,
+minúsculas y mixedcase.
+
+$p = new Persona;
+$p->nombre = "Jorge";
+$p->apellido1 = "DUEÑAS";
+echo $p->upperNombre; //JORGE
+echo $p->lowerNombre; //jorge
+echo $p->mixedApellido1; //Dueñas
+
+Crea un dos métodos con los métodos dinámicos __call que se llame
+establecerNombre y estableceApellido. El primero acepta 1 parámetro que es el
+nombre, el segundo acepta dos parámetros el apellido 1 y el apellido 2.
+
+
+Iteración sobre objetos
+================================================================================
+Observa el primer ejemplo de la documentación
+
+http://php.net/manual/es/language.oop5.iterations.php
+
+Realiza un trait para establecer el rasgo PintarComoTabla que coja aporte la
+funcionalidad de pintar como una tabla cualquier objeto de la clase en la que se
+use.
+
+
+Métodos mágicos
+================================================================================
+Observa los métodos mágicos.
+http://php.net/manual/es/language.oop5.magic.php
+
+Crea una clase PuntoEnPlano con las propiedades x e y, implementa el método
+mágico correspondiente para poder concatenar objetos de tipo PuntoEnPlano con
+cadenas.
+
+Haz una clase derivada PuntoEnEspacio que tenga una propiedad z y que
+también se pueda concatenar con cadenas.
+
+
+Métodos finales
+================================================================================
+Si queremos que un método no se pueda sobreecribir en ninguna clase derivada.
+http://php.net/manual/es/language.oop5.final.php
+
+
+Clonación de Objetos
+================================================================================
+http://php.net/manual/es/language.oop5.final.php
+
+
+Reutiliza la clase Usuario de la práctica de los partidos y crea una clase
+PartidoPadel que asocie a 4 jugadores de las clase Usuario. Implementa la
+funcionalidad para que se pueda realizar una clonación total del partido.
+Creará copias de los objetos Jugadores y del Partido
+
+
+
+Crea una Pila de información utilizando objetos enlazados.
+
+class Nodo
+{
+    public $info;
+    public $siguiente;
+}
+
+class PilaEnlazada implements IEstructuraDeDatos
+{
+    private $inicio = NULL;
+    // Implementación
+}
+
+$pila = new PilaEnlazada();
+$pila->introduce(3);
+//
+// $pila->inicio        | 3,NULL |
+//              \----------/
+//
+$pila->introduce(23);
+//
+// $pila->inicio        | 3,  X |       | 23, NULL |
+//              \----------/   \----------/
+//
+
+
+Comparación de Objetos
+================================================================================
+Comparación de instancia y clase y comparación de referencia. (Mismo objeto)
+http://php.net/manual/es/language.oop5.object-comparison.php

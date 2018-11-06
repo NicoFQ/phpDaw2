@@ -1,0 +1,92 @@
+
+Mini proyecto
+
+El objetivo de esta práctica es realizar un mini proyecto para trabajar
+con el acceso a datos.
+
+Requisitos de la aplicación
+
+La aplicación resultante será un foro sin registro. En la página principal del
+foro podremos ver un listado de temas abiertos y un botón para crear un tema
+nuevo.
+
+Para crear un tema nuevo se pedirá la siguiente información // Formulario
+.- Título del tema (max 120 caracteres)
+.- Nombre de quién lo inició (max 20 caracteres)
+.- Clave de administración. (max 20. La persona que sepa la clave de
+    administración podrá borrar el tema)
+.- Etiqueta con la que se relaciona el tema (texto libre sin espacio, max 20
+    car)
+.- También se guardará la fecha de publicación aunque el usuario no la
+    introduzca
+
+
+Los campos que aparecen en el listado de temas son:
+.- Título
+.- Nombre del creador
+.- Etiqueta
+.- Fecha de creación
+.- Número de respuestas
+
+Junto con cada línea aparecerá un enlace para ver las respuestas y un icono
+para borrarlo.
+
+Este listado estará paginado y a través de los botones de la cabecera permitirá
+realizar una ordenación por todos los campos.
+
+
+Cuando se pinche en un tema aparecerá un listado de respuestas ordenado por
+fecha de publicación. También existirá un botón para introducir una respuesta.
+
+El listado de respuestas tendrá no será podrá ordenar de otra manera y tendrá
+los siguientes campos:
+.- Título de respuesta
+.- Contenido de respuesta
+.- Nombre del publicación
+.- Fecha
+
+Al crear un respuesta se pedirán los siguientes campos:
+.- Título (max 120 car)
+.- Nombre (max 20 caracteres)
+.- Contenido (max 500 car). Para este contenido se permite introducir HTML.
+    Incluiremos en nuestro proyecto algún editor WYSIWYG HTML
+.- También se guardará la fecha de publicación aunque el usuario no la
+    introduzca
+
+Diseño:
+Para el diseño se deja total libertad en cuanto estilos y colores.
+
+Tareas:
+.- Analizar la documentación. Resolver dudas
+.- Diseñar un ER que soporte la aplicación
+.- Hacer un boceto de las pantallas en HTML+CSS
+
+
+Una vez realizado el boceto en HTML+CSS debemos realizar un estructura PHP en la
+que no se repita código:
+http://www.cristalab.com/tutoriales/pasar-html-a-plantilla-base-en-php-usando-include-c105260l/
+
+
+Estructura del proyecto
+/en_alǵun_lugar/foro
+
+                      \- bin
+                        \.- crea_base_de_datos.sh
+                        \.- backup_base_de_datos.sh
+                        \.- despliegue.sh
+                      \- config
+                        \.- config.php
+                            Número de páginas en listados
+                            Conexión a la base de datos
+                      \- docs
+                      \- public
+                         \.- listado_temas.php
+                         \.- crear_tema.php
+                         \.- borrar_tema.php
+                         \.- ver_tema.php
+                         \.- crear_respuesta.php
+                      \- resources
+                      \- src
+                      \- test
+
+limit [limite de busqueda], offset [buscar informacion], mysqldump [backup base de datos];

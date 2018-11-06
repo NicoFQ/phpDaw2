@@ -1,0 +1,16 @@
+Página 1
+Imprime una cuenta bancaria
+Imprime la fecha en España (Hay otras funciones)
+Imprime la fecha en EEUU (Hay otras funciones)
+Imprime un DNI
+Imprime un NIE
+Imprime un teléfono fijo
+Imprime un teléfono móvil
+Imprime
+   "Tres tristres tigres, tragaban trigo en un trigal"
+   "%s tristres %s, tragaban %s en un trigal"
+    alimentando las cadenas en forma inversa
+
+Página 2
+\- Escribe 3 cadenas de formato complejas, analiza qué problemas te han dado y
+   cómo los has solucionado.

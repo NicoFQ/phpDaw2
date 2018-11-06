@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clases y objetos</title>
+</head>
+<body>
+	<ul class="chunklist chunklist_book"><li><a href="#intro.classobj">Introducci&oacute;n</a></li><li><a href="#classobj.setup">Instalaci&oacute;n/Configuraci&oacute;n</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="#classobj.requirements">Requerimientos</a></li><li><a href="#classobj.installation">Instalaci&oacute;n</a></li><li><a href="#classobj.configuration">Configuraci&oacute;n en tiempo de ejecuci&oacute;n</a></li><li><a href="#classobj.resources">Tipos de recursos</a></li></ul></li><li><a href="#classobj.constants">Constantes predefinidas</a></li><li><a href="#classobj.examples">Ejemplos</a></li><li><a href="#ref.classobj">Funciones de Clases/Objetos</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="#function.autoload">__autoload</a> — Intenta cargar una clase sin definir</li><li><a href="#function.call-user-method-array">call_user_method_array</a> — LLamar a un m&eacute;todo de usuario dado con un array de par&aacute;metros</li><li><a href="#function.call-user-method">call_user_method</a> — Llamar a un m&eacute;todo de usuario sobre un objeto espec&iacute;fico</li><li><a href="#function.class-alias">class_alias</a> — Crea un alias para una clase</li><li><a href="#function.class-exists">class_exists</a> — Verifica si la clase ha sido definida</li><li><a href="#function.get-called-class">get_called_class</a> — El nombre de la clase enlazada est&aacute;ticamente en tiempo de ejecuci&oacute;n (&quot;Late State Binding&quot;)</li><li><a href="#function.get-class-methods">get_class_methods</a> — Obtiene los nombres de los m&eacute;todos de una clase</li><li><a href="#function.get-class-vars">get_class_vars</a> — Obtener las propiedades predeterminadas de una clase</li><li><a href="#function.get-class">get_class</a> — Devuelve el nombre de la clase de un objeto</li><li><a href="#function.get-declared-classes">get_declared_classes</a> — Devuelve una matriz con los nombres de las clases definidas</li><li><a href="#function.get-declared-interfaces">get_declared_interfaces</a> — Devuelve un array con todas las interfaces declaradas</li><li><a href="#function.get-declared-traits">get_declared_traits</a> — Devuelve un array de todos los traits declarados</li><li><a href="#function.get-object-vars">get_object_vars</a> — Obtiene las propiedades del objeto dado</li><li><a href="#function.get-parent-class">get_parent_class</a> — Recupera el nombre de la clase padre de un objeto o clase</li><li><a href="#function.interface-exists">interface_exists</a> — Comprueba si una interfaz ha sido definida</li><li><a href="#function.is-a">is_a</a> — Comprueba si un objeto es de una clase o tiene esta clase como una de sus madres</li><li><a href="#function.is-subclass-of">is_subclass_of</a> — Comprobar si el objeto tiene esta clase como una de sus madres o si la implementa</li><li><a href="#function.method-exists">method_exists</a> — Comprueba si existe un m&eacute;todo de una clase</li><li><a href="#function.property-exists">property_exists</a> — Comprueba si el objeto o la clase tienen una propiedad</li><li><a href="#function.trait-exists">trait_exists</a> — Comprobar si el trait existe</li></ul></li></ul></div>
+<hr />
+
+
+
+
+<div id="ref.classobj" class="reference"><hr />
+ <h1 class="title">Funciones de Clases/Objetos</h1>
+<a href="#ref.classobj">Funciones de Clases/Objetos</a>
+ 
+
+
+
+
+<div id="function.autoload" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">__autoload</h1>
+  <p class="verinfo">(PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">__autoload</span> &mdash; <span class="dc-title">Intenta cargar una clase sin definir</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.autoload-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>__autoload</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$class</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Puede definir esta función para habilitar la<a href="#language.oop5.autoload" class="link">carga de clases</a>.
+  </p>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.autoload-parameters">
+  <h3 class="title">Parámetros</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">class</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Nombre de la clase a cargar
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.autoload-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   No devuelve ningún valor.
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.autoload-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.spl-autoload-register" class="function" rel="rdfs-seeAlso">spl_autoload_register()</a> - Registrar las funciones dadas como implementaci&oacute;n de __autoload()</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.call-user-method-array" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">call_user_method_array</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PHP 5)</p><p class="refpurpose"><span class="refname">call_user_method_array</span> &mdash; <span class="dc-title">LLamar a un método de usuario dado con un array de parámetros</span></p>
+
+ </div>
+ <div id="function.call-user-method-array-refsynopsisdiv">
+  <div class="warning"><strong class="warning">Advertencia</strong>
+   
+<p class="para">
+ Esta función está <em class="emphasis">OBSOLETA</em> en PHP 4.1.0, por lo tanto,
+ será <em class="emphasis">ELIMINADA</em> en PHP 7.0.0.
+</p>
+<p class="para">
+ Las alternativas a esta función son:
+</p>
+
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.call-user-func-array" class="function">call_user_func_array()</a></span></li>
+   </ul>
+  </div>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.call-user-method-array-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type"><a href="#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>call_user_method_array</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$method_name</code></span>
+   , <span class="methodparam"><span class="type">object</span> <code class="parameter reference">&$obj</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$params</code></span>
+   )</div>
+
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.call-user-method-array-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">method_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre del método a llamar.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+
+      <code class="parameter">obj</code>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       El <span class="type"><a href="#language.types.object" class="type object">object</a></span> que está siendo llamado desde
+       <code class="parameter">method_name</code>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+
+      <code class="parameter">params</code>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       Un array de parámetros.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-function.call-user-method-array-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6057">
+    <p><strong>Ejemplo #1 Alternativa a <span class="function"><strong>call_user_method_array()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />call_user_func_array</span><span style="color: #007700">(array(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$method_name</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">$params</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.call-user-method-array-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.call-user-func-array" class="function" rel="rdfs-seeAlso">call_user_func_array()</a> - Llamar a una llamada de retorno un array de par&aacute;metros</span></li>
+    <li class="member"><span class="function"><a href="#function.call-user-func" class="function" rel="rdfs-seeAlso">call_user_func()</a> - Llamar a una llamada de retorno dada por el primer par&aacute;metro</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.call-user-method" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">call_user_method</h1>
+  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">call_user_method</span> &mdash; <span class="dc-title">Llamar a un método de usuario sobre un objeto específico</span></p>
+
+ </div>
+ <div id="function.call-user-method-refsynopsisdiv">
+  <div class="warning"><strong class="warning">Advertencia</strong>
+   
+<p class="para">
+ Esta función está <em class="emphasis">OBSOLETA</em> en PHP 4.1.0, por lo tanto,
+ será <em class="emphasis">ELIMINADA</em> en PHP 7.0.0.
+</p>
+<p class="para">
+ Las alternativas a esta función son:
+</p>
+
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.call-user-func" class="function">call_user_func()</a></span></li>
+   </ul>
+  </div>
+ </div>
+ <div class="refsect1 description" id="refsect1-function.call-user-method-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type"><a href="#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>call_user_method</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$method_name</code></span>
+   , <span class="methodparam"><span class="type">object</span> <code class="parameter reference">&$obj</code></span>
+   [, <span class="methodparam"><span class="type"><a href="#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$parameter</code></span>
+   [, <span class="methodparam"><span class="type"><a href="#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
+  ]] )</div>
+
+ </div>
+
+ 
+ <div class="refsect1 parameters" id="refsect1-function.call-user-method-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">method_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre del método a llamar.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+
+      <code class="parameter">obj</code>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       El <span class="type"><a href="#language.types.object" class="type object">object</a></span> que está siendo llamado desde
+       <code class="parameter">method_name</code>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+
+      <code class="parameter">parameter ...</code>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       Los parámetros opcionales.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+ 
+ 
+ <div class="refsect1 examples" id="refsect1-function.call-user-method-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6058">
+    <p><strong>Ejemplo #1 Alternativa a <span class="function"><strong>call_user_method()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />call_user_func</span><span style="color: #007700">(array(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$method_name</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">$parameter&nbsp;</span><span style="color: #FF8000">/*&nbsp;,&nbsp;...&nbsp;*/</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.call-user-method-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.call-user-func-array" class="function" rel="rdfs-seeAlso">call_user_func_array()</a> - Llamar a una llamada de retorno un array de par&aacute;metros</span></li>
+    <li class="member"><span class="function"><a href="#function.call-user-func" class="function" rel="rdfs-seeAlso">call_user_func()</a> - Llamar a una llamada de retorno dada por el primer par&aacute;metro</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.class-alias" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">class_alias</h1>
+  <p class="verinfo">(PHP 5 &gt;= 5.3.0, PHP 7)</p><p class="refpurpose"><span class="refname">class_alias</span> &mdash; <span class="dc-title">Crea un alias para una clase</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.class-alias-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>class_alias</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$original</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$alias</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$autoload</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Crea un alias dado por <code class="parameter">alias</code>
+   basado en la clase <code class="parameter">original</code> definida por el usuario.
+   La clase apodada es exactamente la misma que la clase original.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.class-alias-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">original</code></dt>
+
+     <dd>
+
+      <p class="para">
+       La clase original.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">alias</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre del alias para la clase.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">autoload</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Si se realiza la autocarga si la clase original no se encuentra.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.class-alias-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve <strong><code>TRUE</code></strong> en caso de éxito o <strong><code>FALSE</code></strong> en caso de error.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-function.class-alias-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6059">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>class_alias()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{&nbsp;}<br /><br /></span><span style="color: #0000BB">class_alias</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;los&nbsp;objetos&nbsp;son&nbsp;los&nbsp;mismos<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;las&nbsp;clases&nbsp;son&nbsp;las&nbsp;mismas<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+bool(false)
+bool(true)
+bool(true)
+bool(true)
+bool(true)
+bool(true)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.class-alias-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-parent-class" class="function" rel="rdfs-seeAlso">get_parent_class()</a> - Recupera el nombre de la clase padre de un objeto o clase</span></li>
+    <li class="member"><span class="function"><a href="#function.is-subclass-of" class="function" rel="rdfs-seeAlso">is_subclass_of()</a> - Comprobar si el objeto tiene esta clase como una de sus madres o si la implementa</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.class-exists" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">class_exists</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">class_exists</span> &mdash; <span class="dc-title">Verifica si la clase ha sido definida</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.class-exists-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>class_exists</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$class_name</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$autoload</code><span class="initializer"> = true</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Esta función verifica si la clase dada ha sido definida o no.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.class-exists-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">class_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre de la clase. El nombre es coincidido de manera insensible a mayúsculas y minúsculas.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">autoload</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Indica si ha de llamarse <a href="#language.oop5.autoload" class="link">__autoload</a> o no de forma predeterminada.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.class-exists-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve <strong><code>TRUE</code></strong> si <code class="parameter">class_name</code> es una clase
+   definida, <strong><code>FALSE</code></strong> de lo contrario.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.class-exists-changelog">
+  <h3 class="title">Historial de cambios</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.0.2</td>
+       <td>
+        Ya no devuelve <strong><code>TRUE</code></strong> para interfaces definidas. En ese caso se debe
+        usar <span class="function"><a href="#function.interface-exists" class="function">interface_exists()</a></span>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.class-exists-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6060">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>class_exists()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Verificar&nbsp;que&nbsp;la&nbsp;clase&nbsp;exista&nbsp;antes&nbsp;de&nbsp;usarla<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">class_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'MiClase'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$mi_clase&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MiClase</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-6061">
+    <p><strong>Ejemplo #2 Ejemplo del parámetro <code class="parameter">autoload</code></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">__autoload</span><span style="color: #007700">(</span><span style="color: #0000BB">$clase</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;include(</span><span style="color: #0000BB">$clase&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'.php'</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Verificar&nbsp;si&nbsp;la&nbsp;sentencia&nbsp;include&nbsp;declaró&nbsp;la&nbsp;clase<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">class_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$clase</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">trigger_error</span><span style="color: #007700">(</span><span style="color: #DD0000">"No&nbsp;es&nbsp;posible&nbsp;cargar&nbsp;la&nbsp;clase:&nbsp;</span><span style="color: #0000BB">$clase</span><span style="color: #DD0000">"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">E_USER_WARNING</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">class_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'MiClase'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$mi_clase&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MiClase</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.class-exists-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.function-exists" class="function" rel="rdfs-seeAlso">function_exists()</a> - Devuelve TRUE si la funci&oacute;n dada ha sido definida</span></li>
+    <li class="member"><span class="function"><a href="#function.interface-exists" class="function" rel="rdfs-seeAlso">interface_exists()</a> - Comprueba si una interfaz ha sido definida</span></li>
+    <li class="member"><span class="function"><a href="#function.get-declared-classes" class="function" rel="rdfs-seeAlso">get_declared_classes()</a> - Devuelve una matriz con los nombres de las clases definidas</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+<div id="function.get-called-class" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">get_called_class</h1>
+  <p class="verinfo">(PHP 5 &gt;= 5.3.0, PHP 7)</p><p class="refpurpose"><span class="refname">get_called_class</span> &mdash; <span class="dc-title">El nombre de la clase enlazada estáticamente en tiempo de ejecución (&quot;Late State Binding&quot;)</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.get-called-class-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><strong>get_called_class</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Obtiene el nombre de la clase desde la que se llama al método estático.
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-called-class-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve el nombre de la clase. Devuelve <strong><code>FALSE</code></strong> si la llamada se hizo desde fuera de la clase.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.get-called-class-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6062">
+    <p><strong>Ejemplo #1 Usar <span class="function"><strong>get_called_class()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">prueba</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_called_class</span><span style="color: #007700">());<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">bar&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">::</span><span style="color: #0000BB">prueba</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">bar</span><span style="color: #007700">::</span><span style="color: #0000BB">prueba</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+string(3) &quot;foo&quot;
+string(3) &quot;bar&quot;
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.get-called-class-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-parent-class" class="function" rel="rdfs-seeAlso">get_parent_class()</a> - Recupera el nombre de la clase padre de un objeto o clase</span></li>
+    <li class="member"><span class="function"><a href="#function.get-class" class="function" rel="rdfs-seeAlso">get_class()</a> - Devuelve el nombre de la clase de un objeto</span></li>
+    <li class="member"><span class="function"><a href="#function.is-subclass-of" class="function" rel="rdfs-seeAlso">is_subclass_of()</a> - Comprobar si el objeto tiene esta clase como una de sus madres o si la implementa</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.get-class-methods" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">get_class_methods</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">get_class_methods</span> &mdash; <span class="dc-title">Obtiene los nombres de los métodos de una clase</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.get-class-methods-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname"><strong>get_class_methods</strong></span>
+    ( <span class="methodparam"><span class="type"><a href="#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$class_name</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Obtiene los nombres de los métodos de una clase.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.get-class-methods-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">class_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre de la clase o una instancia de objeto
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-class-methods-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve un array con los nombres de los métodos definidos para la clase especificada por
+   <code class="parameter">class_name</code>. Es caso de error devuelve <strong><code>NULL</code></strong>.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.get-class-methods-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6063">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>get_class_methods()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">miclase&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;constructor<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">miclase</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;método&nbsp;1<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">mifunc1</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;método&nbsp;2<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">mifunc2</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$métodos_clase&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_class_methods</span><span style="color: #007700">(</span><span style="color: #DD0000">'miclase'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;o<br /></span><span style="color: #0000BB">$métodos_clase&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_class_methods</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">miclase</span><span style="color: #007700">());<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$métodos_clase&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$nombre_método</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$nombre_método</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+miclase
+mifunc1
+mifunc2
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.get-class-methods-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-class" class="function" rel="rdfs-seeAlso">get_class()</a> - Devuelve el nombre de la clase de un objeto</span></li>
+    <li class="member"><span class="function"><a href="#function.get-class-vars" class="function" rel="rdfs-seeAlso">get_class_vars()</a> - Obtener las propiedades predeterminadas de una clase</span></li>
+    <li class="member"><span class="function"><a href="#function.get-object-vars" class="function" rel="rdfs-seeAlso">get_object_vars()</a> - Obtiene las propiedades del objeto dado</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.get-class-vars" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">get_class_vars</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">get_class_vars</span> &mdash; <span class="dc-title">Obtener las propiedades predeterminadas de una clase</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.get-class-vars-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname"><strong>get_class_vars</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$class_name</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Obtiene las propiedades predeterminadas de la clase dada.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.get-class-vars-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">class_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre de la clase
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-class-vars-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve una matriz asociativa de las propiedades declaradas visibles desde el
+   ámbito actual, con su valor predeterminado.
+   Los elementos del array resultante están en la forma
+   <em>nombre_variable =&gt; valor</em>.
+   En caso de error devuelve <strong><code>FALSE</code></strong>.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.get-class-vars-changelog">
+  <h3 class="title">Historial de cambios</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.0.3</td>
+       <td>
+        <span class="function"><strong>get_class_vars()</strong></span> 
+        devolverá sólo las propiedades que pueden ser accedidas desde el ámbito
+        actual.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.0.2</td>
+       <td>
+        Al llamar a <span class="function"><strong>get_class_vars()</strong></span> ahora se expondrán
+        todas las propiedades como una matriz, a diferencia del comportamiento anterior donde
+        las propieades protected y private eran prefijadas con bytes nul.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.0.1</td>
+       <td>
+        Al llamar a <span class="function"><strong>get_class_vars()</strong></span> se expondrán todas
+        las propiedades, como cuando se convierte un objeto en una clase.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.get-class-vars-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6064">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>get_class_vars()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">miclase&nbsp;</span><span style="color: #007700">{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$var1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;esta&nbsp;no&nbsp;tiene&nbsp;valor&nbsp;predeterminado...<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">var&nbsp;</span><span style="color: #0000BB">$var2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"xyz"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$var3&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$var4</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;constructor<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">miclase</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;cambiar&nbsp;algunas&nbsp;propiedades<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">var1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">var2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />}<br /><br /></span><span style="color: #0000BB">$mi_clase&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">miclase</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$vars_clase&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_class_vars</span><span style="color: #007700">(</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$mi_clase</span><span style="color: #007700">));<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$vars_clase&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$nombre&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$valor</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$nombre</span><span style="color: #DD0000">&nbsp;:&nbsp;</span><span style="color: #0000BB">$valor</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+var1 :
+var2 : xyz
+var3 : 100
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-6065">
+    <p><strong>Ejemplo #2 <span class="function"><strong>get_class_vars()</strong></span> y comportamiento de ámbito</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">formato</span><span style="color: #007700">(</span><span style="color: #0000BB">$matriz</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">'|'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">array_keys</span><span style="color: #007700">(</span><span style="color: #0000BB">$matriz</span><span style="color: #007700">))&nbsp;.&nbsp;</span><span style="color: #DD0000">"\r\n"</span><span style="color: #007700">;<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">TestCase<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$a&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$c&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">expose</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">formato</span><span style="color: #007700">(</span><span style="color: #0000BB">get_class_vars</span><span style="color: #007700">(</span><span style="color: #0000BB">__CLASS__</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">TestCase</span><span style="color: #007700">::</span><span style="color: #0000BB">expose</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">formato</span><span style="color: #007700">(</span><span style="color: #0000BB">get_class_vars</span><span style="color: #007700">(</span><span style="color: #DD0000">'TestCase'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+// 5.0.0
+a| * b| TestCase c
+a| * b| TestCase c
+
+// 5.0.1 - 5.0.2
+a|b|c
+a|b|c
+
+// 5.0.3 +
+a|b|c
+a
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.get-class-vars-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-class-methods" class="function" rel="rdfs-seeAlso">get_class_methods()</a> - Obtiene los nombres de los m&eacute;todos de una clase</span></li>
+    <li class="member"><span class="function"><a href="#function.get-object-vars" class="function" rel="rdfs-seeAlso">get_object_vars()</a> - Obtiene las propiedades del objeto dado</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.get-class" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">get_class</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">get_class</span> &mdash; <span class="dc-title">Devuelve el nombre de la clase de un objeto</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.get-class-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><strong>get_class</strong></span>
+    ([ <span class="methodparam"><span class="type">object</span> <code class="parameter">$object</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Obtiene el nombre de la clase del objeto dado por <code class="parameter">object</code>.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.get-class-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">object</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El objeto evaluado. Este parámetro puede omitirse cuando se utiliza dentro de una clase.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-class-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve el nombre de la clase de la cual <code class="parameter">object</code>
+   es una instancia. Devuelve <strong><code>FALSE</code></strong> si <code class="parameter">object</code> no es
+   un objeto.
+  </p>
+  <p class="para">
+   Si se omite <code class="parameter">object</code> al usarse dentro de una clase, 
+   devolverá el nombre de la clase.
+  </p>  
+ </div>
+
+ <div class="refsect1 errors" id="refsect1-function.get-class-errors">
+  <h3 class="title">Errores/Excepciones</h3>
+  <p class="para">
+   Si se llama a la función <span class="function"><strong>get_class()</strong></span> con algo que no sea
+   un objeto, se producirá un error de nivel <strong><code>E_WARNING</code></strong>.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.get-class-changelog">
+  <h3 class="title">Historial de cambios</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        El valor predeterminado de <code class="parameter">object</code> ahora es <strong><code>NULL</code></strong>,
+        por lo que pasar el valor <strong><code>NULL</code></strong> a <code class="parameter">object</code> tiene el mismo
+        resultado que no pasar ningún valor.
+       </td>
+      </tr>
+      
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.get-class-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6066">
+    <p><strong>Ejemplo #1 Usar <span class="function"><strong>get_class()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">nombre</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Mi&nbsp;nombre&nbsp;es&nbsp;"&nbsp;</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">)&nbsp;,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;crear&nbsp;un&nbsp;objeto<br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;llamada&nbsp;externa<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Su&nbsp;nombre&nbsp;es&nbsp;"&nbsp;</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">)&nbsp;,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;llamada&nbsp;interna<br /></span><span style="color: #0000BB">$bar</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">nombre</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Su nombre es foo
+Mi nombre es foo
+</pre></div>
+    </div>
+   </div>
+   <div class="example" id="example-6067">
+    <p><strong>Ejemplo #2 Usar <span class="function"><strong>get_class()</strong></span> en superclass</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">abstract&nbsp;class&nbsp;</span><span style="color: #0000BB">bar&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_class</span><span style="color: #007700">());<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">bar&nbsp;</span><span style="color: #007700">{<br />}<br /><br />new&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+string(3) &quot;foo&quot;
+string(3) &quot;bar&quot;
+</pre></div>
+    </div>
+   </div>   
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.get-class-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-called-class" class="function" rel="rdfs-seeAlso">get_called_class()</a> - El nombre de la clase enlazada est&aacute;ticamente en tiempo de ejecuci&oacute;n (&quot;Late State Binding&quot;)</span></li>
+    <li class="member"><span class="function"><a href="#function.get-parent-class" class="function" rel="rdfs-seeAlso">get_parent_class()</a> - Recupera el nombre de la clase padre de un objeto o clase</span></li>
+    <li class="member"><span class="function"><a href="#function.gettype" class="function" rel="rdfs-seeAlso">gettype()</a> - Obtener el tipo de una variable</span></li>
+    <li class="member"><span class="function"><a href="#function.is-subclass-of" class="function" rel="rdfs-seeAlso">is_subclass_of()</a> - Comprobar si el objeto tiene esta clase como una de sus madres o si la implementa</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+<div id="function.get-declared-classes" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">get_declared_classes</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">get_declared_classes</span> &mdash; <span class="dc-title">Devuelve una matriz con los nombres de las clases definidas</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.get-declared-classes-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname"><strong>get_declared_classes</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Obtiene las clases declaradas.
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-declared-classes-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve una matriz con los nombres de las clases declaradas en el script
+   actual.
+  </p>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Observe que, dependiendo de qué extensiones tiene compiladas o
+    cargadas en PHP, las clases adicionales podrían no estar presentes. Esto significa que
+    no será capaz de definir sus propias clases usando estos
+    nombres. Hay una lista de clases predefinidas en la sección <a href="#reserved.classes" class="link">Clases Predefinidas</a> de los
+    apéndices.
+   </p>
+  </p></blockquote>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.get-declared-classes-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6068">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>get_declared_classes()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">get_declared_classes</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo 
+sería algo similar a:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; stdClass
+    [1] =&gt; __PHP_Incomplete_Class
+    [2] =&gt; Directory
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.get-declared-classes-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.class-exists" class="function" rel="rdfs-seeAlso">class_exists()</a> - Verifica si la clase ha sido definida</span></li>
+    <li class="member"><span class="function"><a href="#function.get-declared-interfaces" class="function" rel="rdfs-seeAlso">get_declared_interfaces()</a> - Devuelve un array con todas las interfaces declaradas</span></li>
+    <li class="member"><span class="function"><a href="#function.get-defined-functions" class="function" rel="rdfs-seeAlso">get_defined_functions()</a> - Devuelve un array de todas las funciones definidas</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.get-declared-interfaces" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">get_declared_interfaces</h1>
+  <p class="verinfo">(PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">get_declared_interfaces</span> &mdash; <span class="dc-title">Devuelve un array con todas las interfaces declaradas</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.get-declared-interfaces-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname"><strong>get_declared_interfaces</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Obtiene las interfaces declaradas.
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-declared-interfaces-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve un array con los nombres de las interfaces declaradas en el script
+   actual.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.get-declared-interfaces-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6069">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>get_declared_interfaces()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">get_declared_interfaces</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo 
+sería algo similar a:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; Traversable
+    [1] =&gt; IteratorAggregate
+    [2] =&gt; Iterator
+    [3] =&gt; ArrayAccess
+    [4] =&gt; reflector
+    [5] =&gt; RecursiveIterator
+    [6] =&gt; SeekableIterator
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.get-declared-interfaces-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.interface-exists" class="function" rel="rdfs-seeAlso">interface_exists()</a> - Comprueba si una interfaz ha sido definida</span></li>
+    <li class="member"><span class="function"><a href="#function.get-declared-classes" class="function" rel="rdfs-seeAlso">get_declared_classes()</a> - Devuelve una matriz con los nombres de las clases definidas</span></li>
+    <li class="member"><span class="function"><a href="#function.class-implements" class="function" rel="rdfs-seeAlso">class_implements()</a> - Devuelve las interfaces que son implementadas por la clase o interfaz dadas</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+
+<div id="function.get-declared-traits" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">get_declared_traits</h1>
+  <p class="verinfo">(PHP 5 &gt;= 5.4.0, PHP 7)</p><p class="refpurpose"><span class="refname">get_declared_traits</span> &mdash; <span class="dc-title">Devuelve un array de todos los traits declarados</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.get-declared-traits-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname"><strong>get_declared_traits</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   
+  </p>
+  
+ </div>
+
+ 
+ <div class="refsect1 parameters" id="refsect1-function.get-declared-traits-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">Esta función no tiene parámetros.</p>
+ </div>
+
+ 
+ <div class="refsect1 returnvalues" id="refsect1-function.get-declared-traits-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve un array con los nombres de todos los traits declarados en valores.
+   Devuelve <strong><code>NULL</code></strong> en caso de error.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 seealso" id="refsect1-function.get-declared-traits-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.class-uses" class="function" rel="rdfs-seeAlso">class_uses()</a> - Devolver los &quot;traits&quot; usados por la clase dada</span></li>
+   </ul>
+  </p>
+ </div>
+
+ 
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.get-object-vars" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">get_object_vars</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">get_object_vars</span> &mdash; <span class="dc-title">Obtiene las propiedades del objeto dado</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.get-object-vars-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname"><strong>get_object_vars</strong></span>
+    ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$object</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Obtiene las propiedades no estáticas accesibles del objeto dado por
+   <code class="parameter">object</code> según el ámbito.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.get-object-vars-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">object</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Una instancia de un objeto.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-object-vars-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve un array asociativo con las propiedades no estáticas accesibles
+   del objeto especificado por <code class="parameter">object</code> en el ámbito. Si una propiedad no
+   tiene asignado un valor será devuelta con un valor <strong><code>NULL</code></strong>.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.get-object-vars-changelog">
+  <h3 class="title">Historial de cambios</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Esta función ahora devuelve <span class="type"><a href="#language.types.null" class="type NULL">NULL</a></span> si
+        <code class="parameter">object</code> no es un objeto. Anteriormente devolvía <strong><code>FALSE</code></strong>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.get-object-vars-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6070">
+    <p><strong>Ejemplo #1 Uso de <span class="function"><strong>get_object_vars()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$d</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">prueba</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_object_vars</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$prueba&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_object_vars</span><span style="color: #007700">(</span><span style="color: #0000BB">$prueba</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$prueba</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prueba</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(2) {
+  [&quot;b&quot;]=&gt;
+  int(1)
+  [&quot;c&quot;]=&gt;
+  NULL
+}
+array(4) {
+  [&quot;a&quot;]=&gt;
+  NULL
+  [&quot;b&quot;]=&gt;
+  int(1)
+  [&quot;c&quot;]=&gt;
+  NULL
+  [&quot;d&quot;]=&gt;
+  NULL
+}
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.get-object-vars-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-class-methods" class="function" rel="rdfs-seeAlso">get_class_methods()</a> - Obtiene los nombres de los m&eacute;todos de una clase</span></li>
+    <li class="member"><span class="function"><a href="#function.get-class-vars" class="function" rel="rdfs-seeAlso">get_class_vars()</a> - Obtener las propiedades predeterminadas de una clase</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.get-parent-class" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">get_parent_class</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">get_parent_class</span> &mdash; <span class="dc-title">Recupera el nombre de la clase padre de un objeto o clase</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.get-parent-class-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><strong>get_parent_class</strong></span>
+    ([ <span class="methodparam"><span class="type"><a href="#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$object</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Recupera el nombre de la clase padre de un objeto o clase.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.get-parent-class-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">object</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El objeto evaluádo o nombre de la clase. Este parámetro es opcional si se invoca
+       desde el método del objeto.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-parent-class-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve el nombre de la clase padre de la clase de la cuál
+   <code class="parameter">object</code> es una instancia o el nombre.
+  </p>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Si el objeto no tiene padre o la clase dada no existe devolverá <strong><code>FALSE</code></strong>.
+   </p>
+  </p></blockquote>
+  <p class="para">
+   Si se llama sin parámetro fuera del objeto, esta función devolverá <strong><code>FALSE</code></strong>.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.get-parent-class-changelog">
+  <h3 class="title">Historial de cambios</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.1.0</td>
+       <td>
+        Si se llamaba sin parámetro fuera del objeto, está función devolvía
+        <strong><code>NULL</code></strong> con una advertencia, pero ahora devuelve <strong><code>FALSE</code></strong>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.get-parent-class-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6071">
+    <p><strong>Ejemplo #1 Usar <span class="function"><strong>get_parent_class()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">papá&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">papá</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;implementar&nbsp;algo&nbsp;lógico<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">hijo&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">papá&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">hijo</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Soy&nbsp;hijo&nbsp;de&nbsp;"&nbsp;</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">get_parent_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">)&nbsp;,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">hijo2&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">papá&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">hijo2</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Yo&nbsp;también&nbsp;soy&nbsp;hijo&nbsp;de&nbsp;"&nbsp;</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">get_parent_class</span><span style="color: #007700">(</span><span style="color: #DD0000">'hijo2'</span><span style="color: #007700">)&nbsp;,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">hijo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">hijo2</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+I&#039;m dad&#039;s son
+I&#039;m dad&#039;s son too
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.get-parent-class-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-class" class="function" rel="rdfs-seeAlso">get_class()</a> - Devuelve el nombre de la clase de un objeto</span></li>
+    <li class="member"><span class="function"><a href="#function.is-subclass-of" class="function" rel="rdfs-seeAlso">is_subclass_of()</a> - Comprobar si el objeto tiene esta clase como una de sus madres o si la implementa</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.interface-exists" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">interface_exists</h1>
+  <p class="verinfo">(PHP 5 &gt;= 5.0.2, PHP 7)</p><p class="refpurpose"><span class="refname">interface_exists</span> &mdash; <span class="dc-title">Comprueba si una interfaz ha sido definida</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.interface-exists-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>interface_exists</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$interface_name</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$autoload</code><span class="initializer"> = true</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Comprueba si la interfaz dada ha sido definida.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.interface-exists-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">interface_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre de la interfaz
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">autoload</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Si llamar a <a href="#language.oop5.autoload" class="link">__autoload</a> o no por defecto.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.interface-exists-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve <strong><code>TRUE</code></strong> si la interfaz dada por
+   <code class="parameter">interface_name</code> ha sido definida, <strong><code>FALSE</code></strong> si no.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.interface-exists-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6072">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>interface_exists()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Comprobar&nbsp;si&nbsp;la&nbsp;interfaz&nbsp;existe&nbsp;antes&nbsp;de&nbsp;intentar&nbsp;usarla<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">interface_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'MiInterfaz'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;</span><span style="color: #0000BB">MiClase&nbsp;</span><span style="color: #007700">implements&nbsp;</span><span style="color: #0000BB">MiInterfaz<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Métodos<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.interface-exists-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-declared-interfaces" class="function" rel="rdfs-seeAlso">get_declared_interfaces()</a> - Devuelve un array con todas las interfaces declaradas</span></li>
+    <li class="member"><span class="function"><a href="#function.class-implements" class="function" rel="rdfs-seeAlso">class_implements()</a> - Devuelve las interfaces que son implementadas por la clase o interfaz dadas</span></li>
+    <li class="member"><span class="function"><a href="#function.class-exists" class="function" rel="rdfs-seeAlso">class_exists()</a> - Verifica si la clase ha sido definida</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.is-a" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">is_a</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">is_a</span> &mdash; <span class="dc-title">Comprueba si un objeto es de una clase o tiene esta clase como una de sus madres</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.is-a-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>is_a</strong></span>
+    ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$object</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$class_name</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$allow_string</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Comprueba si el objeto dado por <code class="parameter">object</code> es de esta clase o tiene
+   esta clase como una de sus madres.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.is-a-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">object</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El objeto evaluado
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">class_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre de la clase
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">allow_string</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Si este parámetro se establece a <strong><code>FALSE</code></strong>, no se permite una cadena de nombre de la clase como
+       <code class="parameter">object</code>. Esto también evita llamar al autocargador si la clase no existe.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.is-a-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve <strong><code>TRUE</code></strong> si el objeto es de esta clase o tiene esta clase como una de sus
+   madres, <strong><code>FALSE</code></strong> si no.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.is-a-changelog">
+  <h3 class="title">Historial de cambios</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.9</td>
+       <td>
+        Se añadió el parámetro <code class="parameter">allow_string</code>
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Esta función ya no está obsoleta, y por lo tanto
+        ya no lanza advertencias de tipo <strong><code>E_STRICT</code></strong>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.0.0</td>
+       <td>
+        Esta funcion se volvió obsoleta en favor del operador
+        <a href="#language.operators.type" class="link">instanceof</a>.
+        Llamar a esta función resultará en una
+        advertencia de tipo <strong><code>E_STRICT</code></strong>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.is-a-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6073">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>is_a()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;definir&nbsp;una&nbsp;clase<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">FábricaTrastos<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$oink&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'moo'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;crear&nbsp;un&nbsp;nuevo&nbsp;objeto<br /></span><span style="color: #0000BB">$WF&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">FábricaTrastos</span><span style="color: #007700">();<br /><br />if&nbsp;(</span><span style="color: #0000BB">is_a</span><span style="color: #007700">(</span><span style="color: #0000BB">$WF</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'FábricaTrastos'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Sí,&nbsp;\$WF&nbsp;es&nbsp;todavía&nbsp;un&nbsp;FábricaTrastos\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-6074">
+    <p><strong>Ejemplo #2 Usar el operador <em class="emphasis">instanceof</em> en PHP 5</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$WF&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">FábricaTrastos</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Sí,&nbsp;$WF&nbsp;es&nbsp;un&nbsp;FábricaTrastos'</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.is-a-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-class" class="function" rel="rdfs-seeAlso">get_class()</a> - Devuelve el nombre de la clase de un objeto</span></li>
+    <li class="member"><span class="function"><a href="#function.get-parent-class" class="function" rel="rdfs-seeAlso">get_parent_class()</a> - Recupera el nombre de la clase padre de un objeto o clase</span></li>
+    <li class="member"><span class="function"><a href="#function.is-subclass-of" class="function" rel="rdfs-seeAlso">is_subclass_of()</a> - Comprobar si el objeto tiene esta clase como una de sus madres o si la implementa</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+<div id="function.is-subclass-of" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">is_subclass_of</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">is_subclass_of</span> &mdash; <span class="dc-title">Comprobar si el objeto tiene esta clase como una de sus madres o si la implementa</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.is-subclass-of-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>is_subclass_of</strong></span>
+    ( <span class="methodparam"><span class="type"><a href="#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$object</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$class_name</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$allow_string</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Comprueba si el <code class="parameter">object</code> dado tiene la clase
+   <code class="parameter">class_name</code> como una de sus madres o si la implementa.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.is-subclass-of-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">object</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Un nombre de clase o una instancia de objeto. No se genera ningún error si la clase no existe.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">class_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre de clase
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">allow_string</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Si se define este parámetro como false, no se permite el uso
+       del nombre de la clase como <code class="parameter">object</code>. Esto también previene llamar el autoloader si la clase no existe.
+      </p>
+     </dd>
+
+        
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.is-subclass-of-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Esta función devuelve <strong><code>TRUE</code></strong> si el objeto <code class="parameter">object</code>
+   pertenece a una clase que sea subclase de
+   <code class="parameter">class_name</code>, <strong><code>FALSE</code></strong> de lo contrario.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.is-subclass-of-changelog">
+  <h3 class="title">Historial de cambios</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.9</td>
+       <td>
+        Se añadió el parámetro <code class="parameter">allow_string</code>
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.7</td>
+       <td>
+        Se añadió el soporte para <code class="parameter">class_name</code> para trabajar con
+        interfaces 
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.0.3</td>
+       <td>
+        Es posible especificar también el parámetro <code class="parameter">object</code> como una
+        cadena (el nombre de la clase)
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.is-subclass-of-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6075">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>is_subclass_of()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;definir&nbsp;una&nbsp;clase<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">FabricaWidget<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$oink&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'moo'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;definir&nbsp;una&nbsp;clase&nbsp;hija<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Hijo_FabricaWidget&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">FabricaWidget<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$oink&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'oink'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;crear&nbsp;un&nbsp;nuevo&nbsp;objeto<br /></span><span style="color: #0000BB">$FW&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">FabricaWidget</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$HFW&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Hijo_FabricaWidget</span><span style="color: #007700">();<br /><br />if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #0000BB">$HFW</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'FabricaWidget'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"si,&nbsp;\$HFW&nbsp;es&nbsp;una&nbsp;sub-clase&nbsp;de&nbsp;FabricaWidget\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"no,&nbsp;\$HFW&nbsp;no&nbsp;es&nbsp;una&nbsp;sub-clase&nbsp;de&nbsp;FabricaWidget\n"</span><span style="color: #007700">;<br />}<br /><br /><br />if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #0000BB">$FW</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'FabricaWidget'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"si,&nbsp;\$FW&nbsp;es&nbsp;una&nbsp;sub-clase&nbsp;de&nbsp;FabricaWidget\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"no,&nbsp;\$FW&nbsp;no&nbsp;es&nbsp;una&nbsp;sub-clase&nbsp;de&nbsp;FabricaWidget\n"</span><span style="color: #007700">;<br />}<br /><br /><br /></span><span style="color: #FF8000">//&nbsp;usable&nbsp;sólo&nbsp;desde&nbsp;PHP&nbsp;5.0.3<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #DD0000">'Hijo_FabricaWidget'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'FabricaWidget'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"si,&nbsp;Hijo_FabricaWidget&nbsp;es&nbsp;una&nbsp;sub-clase&nbsp;de&nbsp;FabricaWidget\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"no,&nbsp;Hijo_FabricaWidget&nbsp;no&nbsp;es&nbsp;una&nbsp;sub-clase&nbsp;de&nbsp;FabricaWidget\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+si, $HFW es una sub-clase de FabricaWidget
+no, $FW no es una sub-clase de FabricaWidget
+si, Hijo_FabricaWidget es una sub-clase de FabricaWidget
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-6076">
+    <p><strong>Ejemplo #2 Ejemplo de <span class="function"><strong>is_subclass_of()</strong></span> usando una interfaz</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Definir&nbsp;la&nbsp;interfaz<br /></span><span style="color: #007700">interface&nbsp;</span><span style="color: #0000BB">MiInterfaz<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">MiFunción</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Definir&nbsp;la&nbsp;implementación&nbsp;de&nbsp;la&nbsp;clase&nbsp;de&nbsp;la&nbsp;interfaz<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MiClase&nbsp;</span><span style="color: #007700">implements&nbsp;</span><span style="color: #0000BB">MiInterfaz<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">MiFunción</span><span style="color: #007700">()<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"¡MiClase&nbsp;implementa&nbsp;MiInterfaz!"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Instanciar&nbsp;el&nbsp;objeto<br /></span><span style="color: #0000BB">$mi_objeto&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MiClase</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Funciona&nbsp;desde&nbsp;5.3.7<br /><br />//&nbsp;Una&nbsp;prueba&nbsp;usando&nbsp;la&nbsp;instancia&nbsp;del&nbsp;objeto&nbsp;de&nbsp;la&nbsp;clase<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #0000BB">$mi_objeto</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MiInterfaz'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Sí,&nbsp;\$mi_objeto&nbsp;es&nbsp;una&nbsp;subclase&nbsp;de&nbsp;MiInterfaz\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"No,&nbsp;\$mi_objeto&nbsp;no&nbsp;es&nbsp;una&nbsp;subclase&nbsp;de&nbsp;MiInterfaz\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Una&nbsp;prueba&nbsp;usando&nbsp;una&nbsp;cadena&nbsp;del&nbsp;nombre&nbsp;de&nbsp;la&nbsp;clase<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_subclass_of</span><span style="color: #007700">(</span><span style="color: #DD0000">'MiClase'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MiInterfaz'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Sí,&nbsp;MiClase&nbsp;es&nbsp;una&nbsp;subclase&nbsp;de&nbsp;MiInterfaz\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"No,&nbsp;MiClase&nbsp;no&nbsp;es&nbsp;una&nbsp;subclase&nbsp;de&nbsp;MiInterfaz\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Sí, $mi_objeto es una subclase de MiInterfaz
+Sí, MiClase es una subclase de MiInterfaz
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 notes" id="refsect1-function.is-subclass-of-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+<p class="para">Esta función cargará cualquier 
+ <a href="#language.oop5.autoload" class="link">autocargador</a> registrado si la clase todavía no existe.</p></p></blockquote>
+ </div>
+
+ 
+ <div class="refsect1 seealso" id="refsect1-function.is-subclass-of-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.get-class" class="function" rel="rdfs-seeAlso">get_class()</a> - Devuelve el nombre de la clase de un objeto</span></li>
+    <li class="member"><span class="function"><a href="#function.get-parent-class" class="function" rel="rdfs-seeAlso">get_parent_class()</a> - Recupera el nombre de la clase padre de un objeto o clase</span></li>
+    <li class="member"><span class="function"><a href="#function.is-a" class="function" rel="rdfs-seeAlso">is_a()</a> - Comprueba si un objeto es de una clase o tiene esta clase como una de sus madres</span></li>
+    <li class="member"><span class="function"><a href="#function.class-parents" class="function" rel="rdfs-seeAlso">class_parents()</a> - Devuelve las clases padre de la clase dada.</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+<div id="function.method-exists" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">method_exists</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">method_exists</span> &mdash; <span class="dc-title">Comprueba si existe un método de una clase</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.method-exists-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>method_exists</strong></span>
+    ( <span class="methodparam"><span class="type"><a href="#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$object</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$method_name</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Comprueba si existe el método de la clase en el objeto dado por
+   <code class="parameter">object</code>.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.method-exists-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">object</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Una instancia o un nombre de clase
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">method_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El nombre del método
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.method-exists-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve <strong><code>TRUE</code></strong> si el método dado por <code class="parameter">method_name</code>
+   ha sido definido para el objeto dado por <code class="parameter">object</code>, <strong><code>FALSE</code></strong> 
+   si no.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 notes" id="refsect1-function.method-exists-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+<p class="para">Esta función cargará cualquier 
+ <a href="#language.oop5.autoload" class="link">autocargador</a> registrado si la clase todavía no existe.</p></p></blockquote>
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-function.method-exists-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6077">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>method_exists()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$directorio&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Directory</span><span style="color: #007700">(</span><span style="color: #DD0000">'.'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">method_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$directorio</span><span style="color: #007700">,</span><span style="color: #DD0000">'read'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+</pre></div>
+    </div>
+   </div>
+   <div class="example" id="example-6078">
+    <p><strong>Ejemplo #2 Ejemplo de <span class="function"><strong>method_exists()</strong></span> estático</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">method_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'Directory'</span><span style="color: #007700">,</span><span style="color: #DD0000">'read'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>El resultado del ejemplo sería:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.method-exists-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.function-exists" class="function" rel="rdfs-seeAlso">function_exists()</a> - Devuelve TRUE si la funci&oacute;n dada ha sido definida</span></li>
+    <li class="member"><span class="function"><a href="#function.is-callable" class="function" rel="rdfs-seeAlso">is_callable()</a> - Verificar que los contenidos de una variable puedan ser llamados como una
+   funci&oacute;n</span></li>
+    <li class="member"><span class="function"><a href="#function.class-exists" class="function" rel="rdfs-seeAlso">class_exists()</a> - Verifica si la clase ha sido definida</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+<div id="function.property-exists" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">property_exists</h1>
+  <p class="verinfo">(PHP 5 &gt;= 5.1.0, PHP 7)</p><p class="refpurpose"><span class="refname">property_exists</span> &mdash; <span class="dc-title">
+   Comprueba si el objeto o la clase tienen una propiedad
+  </span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.property-exists-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>property_exists</strong></span>
+    ( <span class="methodparam"><span class="type"><a href="#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$class</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$property</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Esta función comprueba si la propiedad dada por <code class="parameter">property</code> existe en
+   la clase especificada.
+  </p>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    A diferencia de <span class="function"><a href="#function.isset" class="function">isset()</a></span>,
+    <span class="function"><strong>property_exists()</strong></span> devuelve <strong><code>TRUE</code></strong> incluso si la propiedad
+    tiene el valor <strong><code>NULL</code></strong>.
+   </p>
+  </p></blockquote>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.property-exists-parameters">
+  <h3 class="title">Parámetros</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">class</code></dt>
+
+      <dd>
+
+       <p class="para">
+        El nombre de la clase o un objeto de la clase a comprobar
+       </p>
+      </dd>
+
+     
+    
+     <dt>
+<code class="parameter">property</code></dt>
+
+      <dd>
+
+       <p class="para">
+        El nombre de la propiedad
+       </p>
+      </dd>
+
+     
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.property-exists-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve <strong><code>TRUE</code></strong> si la propiedad existe, <strong><code>FALSE</code></strong> si no existe, o
+   <strong><code>NULL</code></strong> en caso de error.
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.property-exists-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+<p class="para">Esta función cargará cualquier 
+ <a href="#language.oop5.autoload" class="link">autocargador</a> registrado si la clase todavía no existe.</p></p></blockquote>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    La función <span class="function"><strong>property_exists()</strong></span> no puede detectar propiedades
+    que son accesibles de forma mágica usando el método mágico <a href="#language.oop5.overloading.members" class="link"><em>__get</em></a>.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.property-exists-changelog">
+  <h3 class="title">Historial de cambios</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Esta función comprueba la existencia de una propiedad independientemente de su
+        accesibilidad.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.property-exists-examples">
+  <h3 class="title">Ejemplos</h3>
+  <p class="para">
+   <div class="example" id="example-6079">
+    <p><strong>Ejemplo #1 Un ejemplo de <span class="function"><strong>property_exists()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">miClase&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$mía</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$xpto</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;protected&nbsp;</span><span style="color: #0000BB">$prueba</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">prueba</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">property_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'miClase'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'xpto'</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//true<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">property_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'miClase'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mía'</span><span style="color: #007700">));&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//true<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">property_exists</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">miClase</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mía'</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//true<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">property_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'miClase'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'xpto'</span><span style="color: #007700">));&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//true,&nbsp;desde&nbsp;PHP&nbsp;5.3.0<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">property_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'miClase'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">));&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//false<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">property_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'miClase'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'prueba'</span><span style="color: #007700">));&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//true,&nbsp;desde&nbsp;PHP&nbsp;5.3.0<br /></span><span style="color: #0000BB">miClase</span><span style="color: #007700">::</span><span style="color: #0000BB">prueba</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.property-exists-seealso">
+  <h3 class="title">Ver también</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="#function.method-exists" class="function" rel="rdfs-seeAlso">method_exists()</a> - Comprueba si existe un m&eacute;todo de una clase</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div>
+<hr />
+
+
+
+
+
+
+
+
+
+<div id="function.trait-exists" class="refentry"><hr />
+ <div class="refnamediv">
+  <h1 class="refname">trait_exists</h1>
+  <p class="verinfo">(PHP 5 &gt;= 5.4.0, PHP 7)</p><p class="refpurpose"><span class="refname">trait_exists</span> &mdash; <span class="dc-title">Comprobar si el trait existe</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.trait-exists-description">
+  <h3 class="title">Descripción</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>trait_exists</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$traitname</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$autoload</code></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   
+  </p>
+  
+ </div>
+
+ 
+ <div class="refsect1 parameters" id="refsect1-function.trait-exists-parameters">
+  <h3 class="title">Parámetros</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">traitname</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Nombre del trait a comprobar
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">autoload</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Si aplicar la autocarga si no está ya cargado.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+ 
+ <div class="refsect1 returnvalues" id="refsect1-function.trait-exists-returnvalues">
+  <h3 class="title">Valores devueltos</h3>
+  <p class="para">
+   Devuelve <strong><code>TRUE</code></strong> si el trait existe, <strong><code>FALSE</code></strong> si no, <strong><code>NULL</code></strong> en caso de error.
+  </p>
+ </div>
+
+ 
+ 
+</div>
+<hr />
+
+</body>
+</html>

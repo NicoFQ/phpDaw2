@@ -1,0 +1,69 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
+#contenedorPrincipal{
+  margin: auto;
+  margin-top: 60px;
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+  display: inline-flex;
+}
+
+.dia{
+  overflow:hidden;
+  width: 150px;
+  height: 100%;
+  
+}
+
+.asignaturax1{
+  width:100%;
+  height:70px;
+  
+}
+
+
+.asignaturax2{
+  width:100%;
+  height:140px;
+
+}
+
+
+.asignaturax3{
+  width:100%;
+  height:210px;
+
+}
+
+#recreo{
+  width: 100%;
+  height: 30px;
+}
+
+#asi1{
+  background-color: #04B404;
+}
+
+#asi2{
+  background-color: #FF8000;
+}
+
+#asi3{
+  background-color: #FF0040;
+}
+
+#asi4{
+  background-color: #0489B1;
+}
+
+#asi5{
+  background-color: #D8D8D8;
+}
+
+#asi6{
+  background-color: #F7FE2E;
+}
