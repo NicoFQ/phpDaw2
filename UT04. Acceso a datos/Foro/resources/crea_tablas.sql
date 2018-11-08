@@ -1,6 +1,5 @@
 DROP TABLE IF EXISTS usuario;
 CREATE TABLE usuario(
-
 	id_usuario INT(4) PRIMARY KEY,
 	nombre VARCHAR(20) NOT NULL,
 	contrasena VARCHAR(20) NOT NULL
