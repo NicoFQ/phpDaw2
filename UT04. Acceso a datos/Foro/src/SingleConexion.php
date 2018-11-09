@@ -1,9 +1,10 @@
 <?php 
-	require_once("./config/config.php");
+	require("../config/config.php");
 	/**
 	 * Esta clase representa una singleton de la conexion con la base de datos.
 	 * -- ... o al menos lo estamos intentando... --
 	 */
+
 	class SingleConexion 
 	{
 		private static $instancia;
@@ -11,11 +12,13 @@
 
 		private function __construct()
 		{
-			$user = global $bd_usuario;
-			$pass = global $bd_contrasena;
-			$nmbd = global $bd_nmBaseDatos;
+			/* NO FUNCIONA
+ 			global $bd_usuario;
+			global $bd_contrasena;
+			global $bd_nmBaseDatos;
+			*/
 			try {
-				$this->bd; = new PDO('mysql:host=localhost;dbname=$nmbd', $user, $pass);		
+				$this->bd = new PDO("mysql:host=localhost;dbname=proyecto_foro", "admin_foro","1234");		
 			} catch (PDOException $e) {
 				print "¡Error!: " . $e->getMessage() . "<br/>";
 				die();
