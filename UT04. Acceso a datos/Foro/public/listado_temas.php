@@ -4,8 +4,9 @@
     $classPath = "../src/";
     require("$classPath${class}.php");
 	});
-    $bd = SingleConexion::getInstance();
-
+    
+    $bd = SingleConexion::getInstance()->conexion();
+    $foro = new Foro($bd);
 
  ?>
 <!DOCTYPE html>
@@ -32,7 +33,7 @@
 
 	<section>
 		
-		
+		<?php $foro->listarTemas(); ?>
 
 	</section>
 
