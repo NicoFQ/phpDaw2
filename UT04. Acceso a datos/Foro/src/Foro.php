@@ -31,11 +31,10 @@
 				}
 		}
 
-		public function pintarTema(array $tema, bool $borrar=true)
+		public function pintarTema(array $tema, bool $borrar=true, bool $responder=true)
 		{ 
 		?>
-			<article>
-					<h4><?=$tema["titulo"]?></h4>
+					<h4><a href="./ver_tema.php?&tema=<?=$tema['id_tema']?>"><?=$tema["titulo"]?></a></h4>
 					<span><?=$tema["nombre"] ?></span>
 					<span><?=$tema["etiqueta"] ?></span>
 					<span><?=$tema["fecha_publicacion"] ?></span>
@@ -43,13 +42,40 @@
 						<span>
 							<a href="./borrar_tema.php?&tema=<?=$tema['id_tema']?>">Borrar</a>
 						</span>
+					<?php } ?>
+						
+					<?php if($responder) {?>
 						<span>
-							<a href="./ver_tema.php?&tema=<?=$tema['id_tema']?>">Ver</a>
+							<a href="./crear_respuesta.php?&tema=<?=$tema['id_tema']?>">Responder</a>
 						</span>
 					<?php } ?>
 					<br>
-			</article>
+		
 
+		<?php
+		}
+
+		public function listarRespuesta(int $limite=10, int $offset=10)
+		{
+			$stmt = $this->bd->query("select * from respuesta;");
+			
+				while ($datos = $stmt->fetch()) {	
+					$this->pintarRespuesta($datos);
+				}
+		}
+		public function pintarRespuesta(array $tema)
+		{ 
+		?>
+		
+					<h4>
+						<span><?=$tema["titulo"] ?></span>
+					</h4>
+					<span><?=$tema["usuario"] ?></span>
+					<span><?=$tema["contenido"] ?></span>
+					<br>
+					<span><?=$tema["fecha_publicacion"] ?></span>
+					<br>
+		
 		<?php
 		}
 

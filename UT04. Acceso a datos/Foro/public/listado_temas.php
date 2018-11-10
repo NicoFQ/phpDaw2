@@ -32,7 +32,7 @@
 	</nav>
 
 	<section>
-		
+
 		<?php $foro->listarTemas(); ?>
 
 	</section>

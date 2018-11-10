@@ -5,12 +5,12 @@
     require("$classPath${class}.php");
 	});
 
+    $bd = SingleConexion::getInstance()->conexion();
+    $foro = new Foro($bd);
+
     $temaEncontrado = false;
     $temaBorrado = false;
     $mensajeErr = "";
-
-    $bd = SingleConexion::getInstance()->conexion();
-    $foro = new Foro($bd);
 
     if (isset($_POST["borrar"])) {
     	if (isset($_POST["clave"])) {
@@ -66,7 +66,7 @@
  			
  				<?php if ($temaEncontrado){ ?>
 
- 					<?php $foro->pintarTema($tema, false);?>
+ 					<?php $foro->pintarTema($tema, false, false);?>
  					
 	 				<form action="./borrar_tema.php?&id=<?= $_GET['tema'] ?>" method="post">
 	 					<label>
