@@ -41,7 +41,7 @@
  		 	</section>
  		 	<section>
  		 		
- 		 		<?php $foro->listarRespuesta();?>
+ 		 		<?php $foro->listarRespuesta($id);?>
 
  		 	</section>
 

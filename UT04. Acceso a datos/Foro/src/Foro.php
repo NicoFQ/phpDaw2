@@ -55,9 +55,9 @@
 		<?php
 		}
 
-		public function listarRespuesta(int $limite=10, int $offset=10)
+		public function listarRespuesta(int $idTema, int $limite=10, int $offset=10)
 		{
-			$stmt = $this->bd->query("select * from respuesta;");
+			$stmt = $this->bd->query("select * from respuesta where id_tema=$idTema;");
 			
 				while ($datos = $stmt->fetch()) {	
 					$this->pintarRespuesta($datos);
@@ -66,7 +66,7 @@
 		public function pintarRespuesta(array $tema)
 		{ 
 		?>
-		
+
 					<h4>
 						<span><?=$tema["titulo"] ?></span>
 					</h4>
@@ -82,6 +82,20 @@
 		public function crearTema(array $datos)
 		{
 			$consulta = $this->bd->prepare("insert into tema (titulo, nombre, clave, etiqueta) values (:titulo, :nombre, :clave, :etiqueta)");
+
+			if ($consulta->execute($datos)) {
+				echo "datos introducidos.";
+			}else{
+				echo "datos NO introducidos.";
+
+			}
+		}
+
+		public function crearRespuesta(array $datos)
+		{
+			echo "Se hace la respuesta";
+			print_r($datos);
+			$consulta = $this->bd->prepare("insert into respuesta (titulo, usuario, contenido, id_tema) values (:titulo, :usuario, :contenido, :id_tema)");
 
 			if ($consulta->execute($datos)) {
 				echo "datos introducidos.";
