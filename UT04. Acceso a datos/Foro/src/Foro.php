@@ -9,6 +9,7 @@
 		private $bd;
 
 		private $tema = [
+			"id_tema" => "",
 			"titulo" => "",
 			"nombre" => "",
 			"clave" => "",
@@ -25,32 +26,27 @@
 		{
 			$stmt = $this->bd->query("select * from tema;");
 			
-
-				//echo "listando temas..";
-				
-				//print_r($stmt);
 				while ($datos = $stmt->fetch()) {	
-					$this->tema["titulo"] = $datos['titulo'];	
-					$this->tema["nombre"] = $datos['nombre'];	
-					$this->tema["clave"] = $datos['clave'];	
-					$this->tema["etiqueta"] = $datos['etiqueta'];	
-					$this->tema["fecha"] = $datos['fecha_publicacion'];	
-
-					$this->pintarTema($this->tema);
+					$this->pintarTema($datos);
 				}
 		}
 
-		private function pintarTema(array $tema)
+		public function pintarTema(array $tema, bool $borrar=true)
 		{ 
 		?>
 			<article>
 					<h4><?=$tema["titulo"]?></h4>
-				
 					<span><?=$tema["nombre"] ?></span>
-					<span><?=$tema["clave"] ?></span>
 					<span><?=$tema["etiqueta"] ?></span>
-					<span><?=$tema["fecha"] ?></span>
-
+					<span><?=$tema["fecha_publicacion"] ?></span>
+					<?php if($borrar) {?>
+						<span>
+							<a href="./borrar_tema.php?&tema=<?=$tema['id_tema']?>">Borrar</a>
+						</span>
+						<span>
+							<a href="./ver_tema.php?&tema=<?=$tema['id_tema']?>">Ver</a>
+						</span>
+					<?php } ?>
 					<br>
 			</article>
 
@@ -59,7 +55,6 @@
 
 		public function crearTema(array $datos)
 		{
-			echo "temaaaa";
 			$consulta = $this->bd->prepare("insert into tema (titulo, nombre, clave, etiqueta) values (:titulo, :nombre, :clave, :etiqueta)");
 
 			if ($consulta->execute($datos)) {

@@ -14,7 +14,6 @@
 	];
 	
 	if (isset($_POST["enviar"])) {
-		echo "POSTT";
 
 		$bd = SingleConexion::getInstance()->conexion();
 	    $foro = new Foro($bd);
