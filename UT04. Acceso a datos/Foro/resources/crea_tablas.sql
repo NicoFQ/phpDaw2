@@ -12,13 +12,13 @@ DROP TABLE IF EXISTS tema;
 CREATE TABLE tema(
 	id_tema INT AUTO_INCREMENT PRIMARY KEY,
 	titulo VARCHAR(20),
+	nombre VARCHAR(20),
+	clave VARCHAR(20),
 	etiqueta VARCHAR(20),
-	fecha_publcacion DATE NOT NULL,
-	id_usuario INT,
-	FOREIGN KEY (id_usuario) 
-	REFERENCES usuario(id_usuario)
-	ON DELETE CASCADE
+	fecha_publicacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 	) ENGINE=INNODB;
+
+
 
 
 DROP TABLE IF EXISTS respuesta;
@@ -27,7 +27,7 @@ CREATE TABLE respuesta(
 	titulo VARCHAR(20) NOT NULL,
 	usuario VARCHAR(20) NOT NULL,
 	contenido VARCHAR(200) NOT NULL,
-	fecha_publcacion DATE NOT NULL,
+	fecha_publicacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	id_tema INT, 
 	FOREIGN KEY (id_tema) 
 	REFERENCES tema(id_tema)
