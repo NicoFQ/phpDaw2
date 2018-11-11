@@ -22,44 +22,136 @@
 			$this->bd = $conexion;
 		}
 
-		public function listarTemas(int $limite=10, int $offset=10)
+		public function listarTemas(string $orden, int $limite=10, int $offset=10)
 		{
-			$stmt = $this->bd->query("select * from tema;");
+			/*	PREGUNTAR POR QUE NO FUNCIONA 
+			echo "-->" .$orden;
+			$sentencia = $this->bd->prepare("select * from tema order by ?;");
+			echo "<br>";
+			print_r($sentencia);
+			$sentencia->execute(array($orden));
+			echo "<br>";
+			print_r($sentencia);
+			*/
+
+			if ($orden == "respuestas") {
+				
+				$sentencia = $this->bd->prepare("
+select 
+	tema.id_tema, tema.titulo, tema.nombre, tema.etiqueta, tema.fecha_publicacion ,count(respuesta.id_tema) as 'respuestas' 
+from 
+	tema 
+left join 
+	respuesta 
+on 
+	tema.id_tema =+ respuesta.id_tema 
+group by 
+	tema.id_tema;
+
+");
+				
+			}else if ($orden == "fecha_publicacion"){
+				$sentencia = $this->bd->prepare("select id_tema, titulo, nombre, etiqueta, fecha_publicacion from tema order by $orden desc;");
+			}else{
+				$sentencia = $this->bd->prepare("select * from tema order by $orden;");
+
+			}
+
+			$sentencia->execute();
+
+			?>
 			
-				while ($datos = $stmt->fetch()) {	
-					$this->pintarTema($datos);
-				}
+			<section>
+				<article>
+					<table>
+						<tr>
+							<td>
+								<a href="./listado_temas.php?&orderby=titulo">Titulo</a>
+							</td>
+							<td>
+								<a href="./listado_temas.php?&orderby=nombre">Creador</a>
+							</td>
+							<td>
+								<a href="./listado_temas.php?&orderby=etiqueta">Etiqueta</a>
+							</td>
+							<td>
+								<a href="./listado_temas.php?&orderby=fecha_publicacion">Fecha de creacion</a>
+							</td>
+							<td>
+								<a href="./listado_temas.php?&orderby=respuestas">Respuestas</a>
+							</td>
+						</tr>
+				<?php 
+					while ($datos = $sentencia->fetch()) {
+						$datos["respuestas"] = $this->cantidadDeRespuestas($datos["id_tema"]);	
+							$this->pintarTema($datos);
+					}
+				 ?>
+					</table>
+			
+				</article>
+			</section>
+
+			<?php
 		}
 
-		public function pintarTema(array $tema, bool $borrar=true, bool $responder=true)
+
+
+		public function pintarTema(array $tema, bool $borrar=true, bool $responder=true, $respuestas=true)
 		{ 
 		?>
-					<h4><a href="./ver_tema.php?&tema=<?=$tema['id_tema']?>"><?=$tema["titulo"]?></a></h4>
-					<span><?=$tema["nombre"] ?></span>
-					<span><?=$tema["etiqueta"] ?></span>
-					<span><?=$tema["fecha_publicacion"] ?></span>
+			
+			<tr>
+				
+				
+					<td>
+						<a href="./ver_tema.php?&tema=<?=$tema['id_tema']?>">
+							<?=$tema["titulo"]?>
+						</a>
+					</td>
+					<td><?=$tema["nombre"] ?></td>
+					<td><?=$tema["etiqueta"] ?></td>
+					<td><?=$tema["fecha_publicacion"] ?></td>
+
+					
+					<?php if($respuestas) {?>
+					<td><?=$tema["respuestas"] ?></td>
+					
+					<?php } ?>
 					<?php if($borrar) {?>
-						<span>
+						<td>
 							<a href="./borrar_tema.php?&tema=<?=$tema['id_tema']?>">Borrar</a>
-						</span>
+						</td>
 					<?php } ?>
 						
 					<?php if($responder) {?>
-						<span>
+						<td>
 							<a href="./crear_respuesta.php?&tema=<?=$tema['id_tema']?>">Responder</a>
-						</span>
+						</td>
+			</tr>
 					<?php } ?>
-					<br>
-		
 
 		<?php
 		}
 
+		private function cantidadDeRespuestas(int $idTema)
+		{
+			$sentencia = $this->bd->prepare("select count(id_respuesta) as 'respuestas' from respuesta where id_tema=?;");
+			$sentencia->execute(array($idTema));
+			$numRespuestas = 0;
+
+			if ($numRespuestas = $sentencia->fetch()) {
+				$numRespuestas = $numRespuestas["respuestas"];
+			}
+			return $numRespuestas;
+		}
+
+
 		public function listarRespuesta(int $idTema, int $limite=10, int $offset=10)
 		{
-			$stmt = $this->bd->query("select * from respuesta where id_tema=$idTema;");
-			
-				while ($datos = $stmt->fetch()) {	
+			$sentencia = $this->bd->prepare("select * from respuesta where id_tema=?;");
+			$sentencia->execute(array($idTema));
+				while ($datos = $sentencia->fetch()) {	
 					$this->pintarRespuesta($datos);
 				}
 		}
