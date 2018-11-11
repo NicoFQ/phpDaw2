@@ -24,12 +24,12 @@
  	</title>
  </head>
  <body>
-    <?php require("./src/head.php"); ?>
+    <?php require("./../src/head.php"); ?>
  	<section>
  		 <article>
             <?php if ($temaEncontrado){ ?>
                 <section>
-                    <?php $foro->pintarTema($tema, false, true);?>
+                    <?php $foro->pintarTema($tema, false, true, false);?>
                 </section>
                 <section>
                     <?php $foro->listarRespuesta($id);?>

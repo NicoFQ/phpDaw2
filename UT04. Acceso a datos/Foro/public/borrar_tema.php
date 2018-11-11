@@ -1,5 +1,7 @@
 <?php 
 require("./../src/conexion.php");
+$temaEncontrado = false;
+$temaBorrado = false;
     if (isset($_POST["borrar"])) {
     	if (isset($_POST["clave"])) {
     		if (isset($_GET["id"])) {
@@ -28,6 +30,9 @@ require("./../src/conexion.php");
     }
     
 
+
+
+
     if (!$temaEncontrado && !isset($_POST["borrar"])){
 		$mensajeErr = "Lo sentimos, el tema no esta disponible.";
 	} else {
@@ -55,7 +60,7 @@ require("./../src/conexion.php");
  			
  				<?php if ($temaEncontrado){ ?>
 
- 					<?php $foro->pintarTema($tema, false, false);?>
+ 					<?php $foro->pintarTema($tema, false, false, false);?>
  					
 	 				<form action="./borrar_tema.php?&id=<?= $_GET['tema'] ?>" method="post">
 	 					<label>

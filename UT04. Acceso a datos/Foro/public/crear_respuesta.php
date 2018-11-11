@@ -1,7 +1,7 @@
 <?php 
 
 	require("./../src/conexion.php");
-    
+    require("./../src/richtexteditor/include_rte.php");
 
     $datos = [
 		"titulo" => "",
@@ -28,6 +28,7 @@
 				$datos["usuario"] = $_POST["usuario"];
 			}
 			if (isset($_POST["contenido"])) {
+				echo $_POST["contenido"];
 				$datos["contenido"] = $_POST["contenido"];
 			}
 			$foro->crearRespuesta($datos);
@@ -60,10 +61,18 @@
 					
 					<label>
 						Contenido:
-						<br>
-						<textarea name="contenido">
-							
-						</textarea>
+
+
+						<?php 
+							$editorHTML = new RichTextEditor();
+							 //$editorHTML->Text="Type here"; 
+			               // Set a unique ID to Editor   
+			                $editorHTML->ID="contenido";    
+			                $editorHTML->MvcInit();   
+			                // Render Editor 
+			                echo $editorHTML->GetString();  
+						 ?>
+
 					</label>
 
 					<br>

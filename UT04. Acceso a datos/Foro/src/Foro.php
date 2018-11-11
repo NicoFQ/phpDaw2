@@ -185,8 +185,6 @@ group by
 
 		public function crearRespuesta(array $datos)
 		{
-			echo "Se hace la respuesta";
-			print_r($datos);
 			$consulta = $this->bd->prepare("insert into respuesta (titulo, usuario, contenido, id_tema) values (:titulo, :usuario, :contenido, :id_tema)");
 
 			if ($consulta->execute($datos)) {

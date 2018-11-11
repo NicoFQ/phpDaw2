@@ -1,5 +1,5 @@
 <?php 
-	require("./../src(conexion.php");
+	require("./../src/conexion.php");
 
 	$datos = [
 	"titulo" => "",
@@ -41,7 +41,7 @@
 	</title>
 </head>
 <body>
-	<?php require("./../src(head.php"); ?>
+	<?php require("./../src/head.php"); ?>
 	<section>
 
 		<form  action="./crear_tema.php" method="post">
