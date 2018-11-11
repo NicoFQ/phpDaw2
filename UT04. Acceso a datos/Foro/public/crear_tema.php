@@ -1,9 +1,5 @@
 <?php 
-
-	spl_autoload_register(function ($class) {
-    $classPath = "../src/";
-    require("$classPath${class}.php");
-	});
+	require("./../src(conexion.php");
 
 	$datos = [
 	"titulo" => "",
@@ -15,9 +11,6 @@
 	
 	if (isset($_POST["enviar"])) {
 
-		$bd = SingleConexion::getInstance()->conexion();
-	    $foro = new Foro($bd);
-	    
 		if (isset($_POST["titulo"])) {
 			$datos["titulo"] = $_POST["titulo"];
 		}
@@ -48,11 +41,7 @@
 	</title>
 </head>
 <body>
-	<head>
-		<h1>
-			¡Crea un tema!
-		</h1>
-	</head>
+	<?php require("./../src(head.php"); ?>
 	<section>
 
 		<form  action="./crear_tema.php" method="post">
