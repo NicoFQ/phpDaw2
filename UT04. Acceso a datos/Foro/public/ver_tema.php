@@ -37,7 +37,7 @@
  		 <article>
  		 	<section>
  		 		
- 		 	<?php $foro->pintarTema($tema, false, true);?>
+ 		 	<?php $foro->pintarTema($tema, false, true, false);?>
  		 	</section>
  		 	<section>
  		 		
