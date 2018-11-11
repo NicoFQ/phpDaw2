@@ -1,17 +1,5 @@
 <?php 
-
-	spl_autoload_register(function ($class) {
-    $classPath = "../src/";
-    require("$classPath${class}.php");
-	});
-
-    $bd = SingleConexion::getInstance()->conexion();
-    $foro = new Foro($bd);
-
-    $temaEncontrado = false;
-    $temaBorrado = false;
-    $mensajeErr = "";
-
+require("./../src/conexion.php");
     if (isset($_POST["borrar"])) {
     	if (isset($_POST["clave"])) {
     		if (isset($_GET["id"])) {
@@ -60,6 +48,7 @@
  	</title>
  </head>
  <body>
+ 	<?php require("./../src/head.php") ?>
  	<article>
  		<section>
  			<h1>Borrar tema</h1>
