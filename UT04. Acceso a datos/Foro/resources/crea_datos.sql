@@ -1,39 +1,30 @@
-INSERT INTO usuario (
-	id_usuario,
-	nombre,
-	contrasena
-) VALUES (
-	"Nico",
-	"nico"
-);
 
-INSERT INTO tema (
-id_tema,
-titulo,
-etiqueta,
-fecha_publcacion,
-id_usuario
-) VALUES (
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("El tema","Ruben","1234","Tema");
 
-	"El primer tema",
-	"Principios",
-	"2018-10-10",
-	
-);
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("Java no me gusta","Paco","1234","Java");
 
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("HTML5 es mejor","Laura","1234","HTML5");
+        
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("Node.js es el futuro","Ramon","1234","Node.js");
 
-INSERT INTO respuesta (
-id_respuesta,
-titulo,
-usuario,
-contenido,
-fecha_publcacion,
-id_tema
-) VALUES (
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("JSON VS XML","Victor","1234","JSON, XML");
+        
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("Otro tema mas","Noriel","1234","OtroTema");
+        
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("El foro tiene fallos","Sandro","1234","Bugs");
+        
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("Sobre Angular","Angulo","1234","Angulas");
+        
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("Android vs IOS","El loco","1234","Android, IOS");
 
-	"La primera respuesta",
-	"UsuarioResponde",
-	"Joder, esto esta comenzando!!",
-	"2018-11-11",
-	
-);
+insert into tema(titulo, nombre, clave, etiqueta)
+		values ("El bug","Bugero","1234","Bugs ");
