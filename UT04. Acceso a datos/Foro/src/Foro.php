@@ -24,31 +24,30 @@
 
 		public function listarTemas(string $orden, int $limite=10, int $offset=10)
 		{
-			/*	PREGUNTAR POR QUE NO FUNCIONA 
 			echo "-->" .$orden;
-			$sentencia = $this->bd->prepare("select * from tema order by ?;");
+			$sentencia = $this->bd->prepare("select * from tema order by :orden;");
 			echo "<br>";
 			print_r($sentencia);
-			$sentencia->execute(array($orden));
+			$sentencia->execute([':orden' => $orden]);
 			echo "<br>";
-			print_r($sentencia);
-			*/
+			//print_r($sentencia->fetch());
+			/*
 
 			if ($orden == "respuestas") {
 				
 				$sentencia = $this->bd->prepare("
-select 
-	tema.id_tema, tema.titulo, tema.nombre, tema.etiqueta, tema.fecha_publicacion ,count(respuesta.id_tema) as 'respuestas' 
-from 
-	tema 
-left join 
-	respuesta 
-on 
-	tema.id_tema =+ respuesta.id_tema 
-group by 
-	tema.id_tema;
+				select 
+					tema.id_tema, tema.titulo, tema.nombre, tema.etiqueta, tema.fecha_publicacion ,count(respuesta.id_tema) as 'respuestas' 
+				from 
+					tema 
+				left join 
+					respuesta 
+				on 
+					tema.id_tema =+ respuesta.id_tema 
+				group by 
+					tema.id_tema;
 
-");
+				");
 				
 			}else if ($orden == "fecha_publicacion"){
 				$sentencia = $this->bd->prepare("select id_tema, titulo, nombre, etiqueta, fecha_publicacion from tema order by $orden desc;");
@@ -57,7 +56,7 @@ group by
 
 			}
 
-			$sentencia->execute();
+			$sentencia->execute();*/
 
 			?>
 			
