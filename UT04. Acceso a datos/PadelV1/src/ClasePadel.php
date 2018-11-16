@@ -19,12 +19,14 @@
 		}
 
 		public function serializarJugadores(){
-			return serialize($this->alumnos);
+			return serialize(array($this->alumnos));
 		}
 		public function reconstruirDatos(array $datos){
-			$nombre = $datos[0]["nombre"];
-			$jugadores = $datos[0]["alumnos_serializados"];
+			$nombre = $datos["nombre"];
+			$jugadores = $datos["alumnos_serializados"];
 			$jugadores = unserialize($jugadores);
+			var_dump($jugadores);
+			//self::pintarTabla($nombre, $jugadores);
 		}
 		
 		public static function pintarTabla(string $pista, array $jugadores){
@@ -34,22 +36,22 @@
 				<caption><?= $pista ?></caption>
 				<tr>
 					<td>
-						<?=jugadores[0] ?>
+						<?php var_dump($jugadores[0]); ?>
 					</td>
 					<td>
-						<?=jugadores[1] ?>
+						<?php var_dump($jugadores[1]); ?>
 						
 					</td>
 				</tr>
 
 				<tr>
 					<td>
-						<?=jugadores[2] ?>
+						<?php var_dump($jugadores[2]); ?>
 						
 					</td>
 					<td>
 						
-						<?=jugadores[3] ?>
+						<?php var_dump($jugadores[3]); ?>
 					</td>
 				</tr>
 			</table>

@@ -1,4 +1,10 @@
 <?php 
+
+	spl_autoload_register(function ($class) {
+	$classPath = "./src/";
+	require("$classPath${class}.php");
+	});
+
 	/**
 	 * Esta clase representa una singleton de la conexion con la base de datos.
 	 * -- ... o al menos lo estamos intentando... --
@@ -51,14 +57,9 @@
 			$pre = $this->bd->prepare("select * from clases;");
 			$pre->execute();
 			while ($fila = $pre->fetch()) {
-				$datos[] = $fila;
+				ClasePadel::reconstruirDatos($fila);
 			}
 			return $datos;
-		}
-
-
-		public function pintarDatos(ClasePadel $datos){
-
 		}
 
 	}

@@ -16,6 +16,10 @@
 			$this->apellido = $apellido;
 			$this->nivel= $nivel;
 		}
+
+		public function mostrarDatos(){
+			return [$this->nombre,$this->apellido,$this->nivel]
+		}
 	}
 
  ?>

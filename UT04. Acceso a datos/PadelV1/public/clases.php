@@ -13,6 +13,6 @@
 	<title>Clases</title>
 </head>
 <body>
-	<?php ClasePadel::reconstruirDatos($con->recuperarDatos()) ?>
+	<?php $con->recuperarDatos() ?>
 </body>
 </html>
