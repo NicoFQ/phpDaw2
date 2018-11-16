@@ -1,5 +1,4 @@
 <?php 
-	require("../config/config.php");
 	/**
 	 * Esta clase representa una singleton de la conexion con la base de datos.
 	 * -- ... o al menos lo estamos intentando... --
@@ -40,14 +39,26 @@
         	return self::$instancia;
 		}
 
-		public function insertaDatos(string $nombre, $jugadores){
-			$pre = $this->bd->prepare("insert into clases (nombre, alumnos_serializados) values ?,?");
+		public function insertaDatos(string $nombre, string $jugadores){
+			$pre = $this->bd->prepare("insert into clases (nombre, alumnos_serializados) values (?,?);");
 			$pre->execute(array($nombre, $jugadores));
+			echo $pre->rowCount();
+			}
+
+		public function recuperarDatos(){
+			echo "Recup";
+			$datos = [];
+			$pre = $this->bd->prepare("select * from clases;");
+			$pre->execute();
+			while ($fila = $pre->fetch()) {
+				$datos[] = $fila;
+			}
+			return $datos;
 		}
 
-		public function recuperDatos(){
-			
-			return $datos;
+
+		public function pintarDatos(ClasePadel $datos){
+
 		}
 
 	}
