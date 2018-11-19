@@ -1,7 +1,7 @@
 <?php 
 
 	spl_autoload_register(function ($class) {
-	$classPath = "./src/";
+	$classPath = "";
 	require("$classPath${class}.php");
 	});
 

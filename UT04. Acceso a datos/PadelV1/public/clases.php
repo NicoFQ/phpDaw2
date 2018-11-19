@@ -11,6 +11,7 @@
 <html>
 <head>
 	<title>Clases</title>
+	<link rel="stylesheet" type="text/css" href="./estiloTabla.css">
 </head>
 <body>
 	<?php $con->recuperarDatos() ?>

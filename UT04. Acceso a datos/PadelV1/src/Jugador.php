@@ -17,9 +17,14 @@
 			$this->nivel= $nivel;
 		}
 
-		public function mostrarDatos(){
-			return [$this->nombre,$this->apellido,$this->nivel]
+		public function getNombre(){
+			return "Nombre: $this->nombre $this->apellido";
 		}
+
+		public function getNivel(){
+			return "Nivel: " .$this->nivel;;
+		}
+
 	}
 
  ?>

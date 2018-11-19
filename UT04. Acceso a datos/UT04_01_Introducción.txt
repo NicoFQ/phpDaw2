@@ -85,8 +85,7 @@ mysql> CREATE DATABASE proyecto01_juan_de_la_cierva;
 3.- Crear usuario (Para nuevo usar cambia nombre y pass)
 mysql> CREATE USER 'juan'@'localhost' IDENTIFIED BY 'cierva1234';
 4.- Conceder privilegios al nuevo usuario
-GRANT ALL PRIVILEGES ON proyecto01_juan_de_la_cierva.* TO 'juan'@'localhost'
-  WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON proyecto01_juan_de_la_cierva.* TO 'juan'@'localhost' WITH GRANT OPTION;
 
 Comprueba
 $ mysql -u juan proyecto01_juan_de_la_cierva
