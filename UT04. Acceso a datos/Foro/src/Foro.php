@@ -8,30 +8,20 @@
 	{
 		private $bd;
 
-		private $tema = [
-			"id_tema" => "",
-			"titulo" => "",
-			"nombre" => "",
-			"clave" => "",
-			"etiqueta" => "",
-			"fecha" => "",
-		];
 		
 		public function __construct($conexion)
 		{
 			$this->bd = $conexion;
 		}
 
-		public function listarTemas(string $orden, int $limite=10, int $offset=10)
+		public function listarTemas(string $orden, int $offset=0, int $limite=10, int $pagina=1)
 		{
-			echo "-->" .$orden;
-			$sentencia = $this->bd->prepare("select * from tema order by :orden;");
-			echo "<br>";
-			print_r($sentencia);
-			$sentencia->execute([':orden' => $orden]);
-			echo "<br>";
-			//print_r($sentencia->fetch());
-			/*
+			$sentencia = $this->bd->prepare("select * from tema;");
+			$sentencia->execute();
+			$numFilas = $sentencia->rowCount();
+			$numPaginas = ceil($numFilas/$limite);
+			
+
 
 			if ($orden == "respuestas") {
 				
@@ -45,19 +35,18 @@
 				on 
 					tema.id_tema =+ respuesta.id_tema 
 				group by 
-					tema.id_tema;
+					tema.id_tema
+				limit $limite offset $offset;
 
 				");
 				
 			}else if ($orden == "fecha_publicacion"){
-				$sentencia = $this->bd->prepare("select id_tema, titulo, nombre, etiqueta, fecha_publicacion from tema order by $orden desc;");
+				$sentencia = $this->bd->prepare("select id_tema, titulo, nombre, etiqueta, fecha_publicacion from tema order by $orden desc limit $limite  offset $offset;");
 			}else{
-				$sentencia = $this->bd->prepare("select * from tema order by $orden;");
-
+				$sentencia = $this->bd->prepare("select * from tema order by $orden limit $limite  offset $offset;");
 			}
 
-			$sentencia->execute();*/
-
+			$sentencia->execute();
 			?>
 			
 			<section>
@@ -92,6 +81,7 @@
 			</section>
 
 			<?php
+			return $numPaginas;
 		}
 
 
@@ -101,9 +91,7 @@
 		?>
 			
 			<tr>
-				
-				
-					<td>
+				<td>
 						<a href="./ver_tema.php?&tema=<?=$tema['id_tema']?>">
 							<?=$tema["titulo"]?>
 						</a>
