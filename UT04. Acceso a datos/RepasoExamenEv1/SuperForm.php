@@ -1,5 +1,5 @@
 <?php 
-
+require("Usuario.php");
 /*
  * Text
  * Password
@@ -8,6 +8,8 @@
  * Checkbox 
  * hidden
  */
+
+$registro = false;
 
 $nombre = "";
 $apellidos = "";
@@ -109,24 +111,6 @@ $errores = [];
 			$errores[] = "No se ha seleccionado el sexo";
 		}
 
-/*
-DROP TABLE IF EXISTS usuario;
-CREATE TABLE usuario(
-	id_tema INT AUTO_INCREMENT PRIMARY KEY,
-	nombre VARCHAR(120),
-	apellidos VARCHAR(20),
-	email VARCHAR(20),
-	contrasena VARCHAR(20),
-    fecha_nacimiento date,
-    ciudad VARCHAR(50),
-    sexo VARCHAR(10),
-    aplicaciones VARCHAR(800),
-    marcas VARCHAR(800),
-    ciudad VARCHAR(20),
-	fecha_publicacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-	) ENGINE=INNODB;
-    
-select * from usuario;*/
 
 		if (isset($_POST["face"])) {
 			$checkFace = "checked";
@@ -183,13 +167,46 @@ select * from usuario;*/
 			values
 			(?,?,?,?,?,?,?,?,?)");
 		$datos = array($nombre,$apellidos,$email,$contrasena,$fechaNacimiento,$ciudad, $sexo, $aplicacionesSerialize, $marcasSerialize);
-		print_r($datos);
+//		print_r($datos);
 		$sentencia->execute($datos);
-
-		print_r($sentencia->errorInfo());
+		if ($sentencia->rowCount()>0) {
+			$registro = true;
+		}
+//		print_r($sentencia->errorInfo());
+		$newUsuario = new Usuario($nombre,$apellidos,$email,$contrasena,$fechaNacimiento,$ciudad, $sexo, $aplicaciones, $marcas);
+		enviaDatos($newUsuario);
 		$conn = null;
+
 	}
 
+	function enviaDatos($usuario){
+		$colorGreen="\033[0;32m";
+$colorClear="\033[0m";
+		$obj = serialize($usuario);
+
+		$servidor = stream_socket_client("tcp://127.0.0.1:1337", $errno, $errorMessage);
+
+		if ($servidor === false) {
+		    throw new UnexpectedValueException("Failed to connect: $errorMessage");
+		    die();
+		}
+
+		echo "Enviando información...";
+		echo "<br>";
+		stream_socket_sendto($servidor, $obj);
+
+		// Cerramos la conexión de envío
+		stream_socket_shutdown($servidor, STREAM_SHUT_WR);
+
+		$infoServer = stream_get_contents($servidor);
+		echo "Server dice: $infoServer\n";
+
+		//echo "Cerramos la conexión\n";
+		fclose($servidor);
+
+
+
+	}
  ?>
 
 
@@ -253,5 +270,8 @@ select * from usuario;*/
  	<?php foreach ($errores as $error): ?>
  		<p><?=$error ?></p>
  	<?php endforeach ?>
+ 	<?php if ($registro): ?>
+ 		<div><?php echo "Se ha completado el registro." ?></div>
+ 	<?php endif ?>
  </body>
  </html>
