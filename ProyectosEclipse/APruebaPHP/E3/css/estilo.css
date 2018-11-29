@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Western';
+  src: url('../font/RioGrande.ttf')  format('truetype');
+}
+
+.western {
+  font-size: 10em;
+  font-family: 'Western';
+}
+
+body {
+  background: #ffcc99;
+  text-align: center;
+}
+
+img {
+
+}
+
+.error {
+  font-weight: bold;
+  color: #D33;
+}
+
+.victoria {
+  font-weight: bold;
+  font-size: 2em;
+  color: #808000;
+}
+
+.palabra {
+  letter-spacing: 1em;
+  font-size: 4em;
+
+}

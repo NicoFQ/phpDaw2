@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table {
+  margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.bloque {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 1px solid black;
+}
+
+#desc {
+  min-width: 300px;
+}
