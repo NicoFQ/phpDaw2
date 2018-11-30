@@ -1,0 +1,68 @@
+* {
+  margin: 0.2em;
+}
+
+form {
+  text-align: center;
+}
+input.enviar {
+    width: 100%;
+    height: 4em;
+}
+
+.error {
+  font-weight: bold;
+  color: #D33;
+}
+
+.bloque {
+  border: 1px solid grey;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  padding: 0.5em;
+}
+
+.bloque-error {
+  border: 3px dotted red;
+}
+
+.bloque > div {
+  text-decoration: underline;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table {
+  margin: auto;
+  width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+td.contenido {
+  text-align: left;
+}
+
+td.contenido > div {
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'CocktailFont';
+
+  src: url('../font/Respective.ttf')  format('truetype');
+}
+
+td.cocktail {
+
+
+  letter-spacing: 0.1em;
+  font-size: 4em;
+  font-family: 'CocktailFont';
+}
