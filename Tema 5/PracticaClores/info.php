@@ -1,19 +1,19 @@
 <?php 
+require_once("Colores.php"); 
 
-	setcookie("colorFondo", "silver");
-	$colores = [
-		"amarilo" => "yellow",
-		"gris" => "silver",
-		"rojo" => "tomato",
-		"negro" => "black",
-	];
-	
-	$color = "white";
+	$color = $colores["LightCyan"]; // Se establece un color predetermiado para la pagina.
 
-	if (isset($_COOKIE["colorDeFondo"])) {
-		$color = $_COOKIE["colorDeFondo"];
+	if (isset($_GET["color"])) {
+		$color = trim($_GET["color"]);
+		setcookie("color",$color, time()+60);
 	}else{
-		setcookie("fondo","amarillo");
+
+		if (isset($_COOKIE["color"])) {
+			echo "Se ha recuperado su fondo de pagina.";
+			$color = $colores[$_COOKIE["color"]];
+		}else{
+			echo "No hay cookie.";
+		}		
 	}
 
  ?>
@@ -25,7 +25,7 @@
  <style type="text/css">
 
  	body{
- 		background-color: <?='#'.$color ?>
+ 		background-color: <?=$color ?>
  	}
 
  </style>
