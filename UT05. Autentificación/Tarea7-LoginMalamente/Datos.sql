@@ -1,15 +1,13 @@
-DROP TABLE IF EXISTS usuario;
+DROP TABLE IF EXISTS user;
 CREATE TABLE user(
-
 	nombreUsuario VARCHAR(120),
 	nombre VARCHAR(100),
-	contrasena VARCHAR(20),
+	contrasena VARCHAR(20)
+) ENGINE=INNODB;
 
-	) ENGINE=INNODB;
-
 insert into user (nombreUsuario, nombre, contrasena)
-values ("admin", "pepe","1234");
+values ("admin", "Administrador","1234");
 insert into user (nombreUsuario, nombre, contrasena)
-values ("Ra-Joyyy", "Mariano","PPPP");
+values ("NicoFQ", "Nicolas","1234");
 insert into user (nombreUsuario, nombre, contrasena)
-values ("Sanchez1985", "Pedro","PSOE");
+values ("Leo1990", "Leonardo","1234");

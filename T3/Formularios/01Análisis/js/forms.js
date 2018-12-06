@@ -15,7 +15,7 @@ document.getElementById('post-form').onsubmit = function() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "http://127.0.0.1:8080", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("valor=" + valorAJAXGet.value);
+    xhttp.send("valor=" + valorAJAXPost.value);
     // No enviamos el formulario normal
     // hemos enviado la información por AJAX
     return false;
