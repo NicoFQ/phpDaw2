@@ -1,4 +1,9 @@
 <?php 
+
+
+
+
+
 // Tarea7-LoginMalamente.php 
 	require_once("Conexion.php");
 	$usuario = "";
@@ -31,7 +36,7 @@
 			* Si no se ha producido ningun error en los datos
 			* se procede a la consulta del usuario.
 			*/
-			$sentencia = $mbd->prepare("select nombre from user where nombreUsuario like ? and contrasena like ?;");
+			$sentencia = $mbd->prepare("select nombre from user where nombreUsuario = ? and contrasena = ?;");
 			$sentencia->execute(array($usuario, $contrasena));
 
 			// Se recoge el primer indice de la consulta que será el usuario.

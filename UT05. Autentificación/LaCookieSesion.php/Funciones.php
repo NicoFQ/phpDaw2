@@ -14,7 +14,7 @@
 	* algun usuario se presente sin una. Tambien guarda 
 	* datos de una sesion por defecto */
 	function nuevaSesion(){
-		$vidaCookie = 200;
+		$vidaCookie = 500;
 		$data = ["nombre"=>"Anonimo", "musica" => [], "colores" => ["colorFondo"=>"silver","colorFuente"=>"black"]];
 		// Se crea la cookie que necesita ser sesion.
 		$idAleatorio = idAleatorio();

@@ -1,0 +1,51 @@
+<?php 
+	$coloresFuente = [
+		"IndianRed" => "#CD5C5C",
+		"LightCoral" => "#F08080",
+		"Salmon" => "#FA8072",
+		"DarkSalmon" => "#E9967A",
+		"LightSalmon" => "#FFA07A",
+		"Crimson" => "#FFA07A",
+		"FireBrick" => "#B22222",
+		"DarkRed" => "#8B0000",
+		"LightSalmon" => "#FFA07A",
+		"Pink"=>"#FFC0CB",
+		"LightPink"=>"#FFB6C1",
+		"HotPink"=>"#FF69B4",
+		"DeepPink"=>"#FF1493",
+		"MediumVioletRed"=>"#C71585",
+		"PaleVioletRed"=>"#DB7093",
+		"LightSalmon"=>"#FFA07A",
+		"Coral"=>"#FF7F50",
+		"Tomato"=>"#FF6347",
+		"OrangeRed"=>"#FF4500",
+		"DarkOrange"=>"#FF8C00",
+		"Orange"=>"#FFA500",
+		"DarkSlateGray"=>"#2F4F4F",
+	];
+
+	$coloresFondo = [
+		"GhostWhite"=>"#F8F8FF",
+		"WhiteSmoke"=>"#F5F5F5",
+		"SeaShell"=>"#FFF5EE",
+		"Beige"=>"#F5F5DC",
+		"OldLace"=>"#FDF5E6",
+		"FloralWhite"=>"#FFFAF0",
+		"Ivory"=>"#FFFFF0",
+		"AntiqueWhite"=>"#FAEBD7",
+		"Linen"=>"#FAF0E6",
+		"LavenderBlush"=>"#FFF0F5",
+		"MistyRose"=>"#FFE4E1",
+		"Gainsboro"=>"#DCDCDC",
+		"LightGray"=>"#D3D3D3",
+		"Silver"=>"#C0C0C0",
+		"DarkGray"=>"#A9A9A9",
+		"Gray"=>"#808080",
+		"DimGray"=>"#696969",
+		"LightSlateGray"=>"#778899",
+		"SlateGray"=>"#708090",
+
+		"Black"=>"#000000",
+	];
+
+ ?>
