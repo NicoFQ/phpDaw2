@@ -1,8 +1,8 @@
 <?php 
-	$user = "admon";
+	
 	try {
 	    $mbd = new PDO('mysql:host=localhost;dbname=proyecto_foro',
-	     "$user", "1234");
+	     "admin_foro", "1234");
 	    $mbd -> exec("SET CHARACTER SET utf8");
 
 	    /* Punto de partida */
@@ -14,6 +14,4 @@
 	    print "¡Error!: " . $e->getMessage() . "<br/>";
 	    die();
 	}
-
-
  ?>
