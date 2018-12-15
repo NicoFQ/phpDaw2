@@ -1,5 +1,4 @@
 <?php 
-
 	try {
 	    $mbd = new PDO('mysql:host=localhost;dbname=proyecto_foro',
 	     "admin_foro", "1234");
@@ -14,6 +13,4 @@
 	    print "¡Error!: " . $e->getMessage() . "<br/>";
 	    die();
 	}
-
-
  ?>
