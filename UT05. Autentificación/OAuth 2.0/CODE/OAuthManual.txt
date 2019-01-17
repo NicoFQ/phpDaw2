@@ -1,0 +1,65 @@
+1º Familiarízate con la aplicación
+
+2º Acceso CLIENT CREDENTIAL
+
+.- Crea un cliente del API
+.- Este cliente puede acceder a información de la aplicación y a realizar
+   acciones en nombre del usuario creador.
+
+Vamos a usar un token generado en la web, paso más sencillo
+.- Genera el token
+
+Petición sin token
+GET /api/me HTTP/1.1
+Host: 127.0.0.1
+
+
+GET /api/me HTTP/1.1
+Host: 127.0.0.1
+Authorization: Bearer ACCESSTOKENHERE
+
+
+POST /api/2/eggs-count HTTP/1.1
+Host: 127.0.0.1
+Authorization: Bearer ACCESSTOKENHERE
+
+
+Otro usuario
+POST /api/3/eggs-count HTTP/1.1
+Host: 127.0.0.1
+Authorization: Bearer ACCESSTOKENHERE
+
+
+
+
+
+POST /api/2/eggs-count HTTP/1.1
+
+
+Recoger huevos de ese token
+
+POST /api/2/eggs-collect HTTP/1.1
+Host: 127.0.0.1
+Authorization: Bearer ACCESSTOKENHERE
+
+
+POST /api/2/eggs-collect HTTP/1.1
+Host: 127.0.0.1
+Authorization: Bearer 9e78e51b7fc590b9862f7d84176fab7e5904a0b8
+
+
+POST /api/2/eggs-collect HTTP/1.1
+Host: 127.0.0.1:9000
+Authorization: Bearer 6d37f92e287799a07310f10943eefed6937c0380
+
+POST /api/2/eggs-count HTTP/1.1
+Host: 127.0.0.1:9000
+Authorization: Bearer 7e0770420dc9fbda58c52bb221bc3da480ea175f
+
+
+
+
+POST /api/2/eggs-collect HTTP/1.1
+Host: 127.0.0.1
+
+access_token=3b973fe88ac98b355f2104993e1d919bd6d1462d&grant_type=authorization_code
