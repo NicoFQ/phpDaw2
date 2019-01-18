@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PET="POST /api/2/eggs-count HTTP/1.1
+PET="POST /api/2/eggs-collect HTTP/1.1
 Host: 127.0.0.1
-Authorization: Bearer 9fa5ab21efc3f7bc203e8d2684da12c793ca2777
+Authorization: Bearer c8b264d11bc6de0d6c45b063bf3e943fb9aa5f2e
 
 "
 

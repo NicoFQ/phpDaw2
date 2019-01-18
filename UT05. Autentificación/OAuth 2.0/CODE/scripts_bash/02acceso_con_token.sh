@@ -1,7 +1,7 @@
 #!/bin/bash
 
-NAME="RecogeHuevos"
-SECRET="88fccabc79c9d2bf170ce8bc0dbf5c76"
+NAME="Granja"
+SECRET="5b7cdc51a057902511d145d3288a2974"
 
 DATA="client_id=$NAME&client_secret=$SECRET&grant_type=client_credentials"
 LDATA=${#DATA}
@@ -28,3 +28,14 @@ TOKEN=$(echo $RES |  sed -r 's/.*\"access_token\":\"(\w+)\".*/\1/')
 
 echo "Buscando token:"
 echo $TOKEN
+echo "--------------------------------------------------------"
+PET="POST /api/2/eggs-collect HTTP/1.1
+Host: 127.0.0.1
+Authorization: Bearer c8b264d11bc6de0d6c45b063bf3e943fb9aa5f2e
+
+"
+
+RES=$(printf "$PET" | nc -v 127.0.0.1 9000)
+
+echo $RES
+
