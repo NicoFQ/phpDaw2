@@ -1,21 +1,25 @@
 <?php
 	
 
-	/* Multiples sesiones */
-	//session_name("ASD");
-	//session_start();
+	/* Multiples sesiones 
+	session_name("SES_1");
+	session_start();
 	if(!isset($_SESSION['valor'])) {
 	  $_SESSION['valor'] = 20;
+	}else{
+		$_SESSION['valor'] = 10;
 	}
 	$tmp1 = $_SESSION['valor'];
-	//session_write_close();
-	//session_name("DSA");
+	session_write_close();
+	session_name("SES_2");
 
 	//Importante
-	//session_id(session_create_id());
-	//session_start();
+	session_id(session_create_id());
+	session_start();
 	if(!isset($_SESSION['valor'])) {
 	  $_SESSION['valor'] = 10;
+	}else{
+		$_SESSION['valor'] = 20;
 	}
 	$tmp2 = $_SESSION['valor'];
 
@@ -29,5 +33,35 @@
 	}
 	print_r($_SESSION);
 
-	echo "Visita $numVisita, en sesion ASD valor $tmp1 y en sesion DSA valor $tmp2";
+	echo "Visita $numVisita, en sesion SES_1 valor $tmp1 y en sesion SES_2 valor $tmp2";
+*/
+
+
+	/* Multiples sesiones */
+	session_id(session_create_id());
+	session_name("ASD");
+	session_start();
+	if(!isset($_SESSION['valor'])) {
+	  $_SESSION['valor'] = 20;
+	}
+	$tmp1 = $_SESSION['valor'];
+
+	session_write_close();
+
+
+	session_name("DSA");
+
+	//Importante
+	session_id(session_create_id());
+	session_start();
+
+	if(!isset($_SESSION['valor'])) {
+	  $_SESSION['valor'] = 10;
+	}
+	$tmp2 = $_SESSION['valor'];
+
+	echo "Sesión ASD tiene valor $tmp1<br>";
+	echo "Sesión DSA tiene valor $tmp2<br>";
+	print_r($_COOKIE)
+
 ?>
