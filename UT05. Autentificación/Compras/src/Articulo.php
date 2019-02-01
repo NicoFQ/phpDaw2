@@ -95,5 +95,9 @@ class Articulo
         //print_r($this->articulosCarrito);
         
     }
+
+    public function pintarCarrito(){
+        
+    }
 }
 ?>

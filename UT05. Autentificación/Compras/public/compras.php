@@ -60,7 +60,8 @@
  </head>
  <body>
  	<h1>Bienvenido <?=$nombre?></h1>
- 	<h3> <?=$numArticulos?> articulos en tu carrito</h3>
+ 	<h3> <?=$numArticulos?> tipos de articulos en tu carrito</h3>
+ 	
  	
  	<?php $articulosBD->obtenerArticulos(); ?>
  	<hr>
