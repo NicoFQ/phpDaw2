@@ -1,0 +1,8 @@
+Horas: 8
+
+Desarrollo de aplicaciones web híbridas:
+— Reutilización de código e información.
+— Utilización de información proveniente de repositorios. UDDI (Universal Des-
+cription, Discovery and Integration).
+— Incorporación de funcionalidades específicas.
+— Sindicación y formatos de redifusión. RSS (Rich Site Summary), Atom.
